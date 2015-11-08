@@ -1,0 +1,16 @@
+{
+    "name": "thcolin/scene-release-parser",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "thcolin",
+            "email": "th.colin3@gmail.com"
+        }
+    ],
+    "autoload": {
+	    "psr-4": {
+		    "thcolin\\SceneReleaseParser\\": "src/"
+	    }
+    }
+}
