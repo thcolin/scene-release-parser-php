@@ -187,6 +187,7 @@
 			'CHRONO' => 'CHRONO',
 			'HDLIGHT' => 'HDLIGHT',
 			'UNCUT' => 'UNCUT',
+			'UNCENSORED' => 'UNCENSORED',
 			'DUBBED' => 'DUBBED',
 			'SUBBED' => 'SUBBED',
 			'DUAL' => 'DUAL',
@@ -200,6 +201,7 @@
 			'TRUEHD' => 'TRUEHD',
 			'3D' => '3D',
 			'HSBS' => 'HSBS',
+			'DOC' => 'DOC',
 			'INT' => 'INT',
 			'RERIP' => [
 				'rerip',
@@ -367,28 +369,7 @@
 		}
 		
 		public function guessResolution(){
-			
-			if(!isset($this -> source))
-			
-				return 'SD';
-			
-			switch($this -> source){
-				
-				case 'HDTV':
-				case 'AHDTV':
-					return '720p';
-				break;
-				
-				case 'BLURAY':
-					return '1080p';
-				break;
-				
-				default:
-					return 'SD';
-				break;
-				
-			}
-			
+			return 'SD';
 		}
 		
 		public function getSource(){

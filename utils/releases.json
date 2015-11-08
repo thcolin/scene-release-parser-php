@@ -4,7 +4,7 @@
         "type": "tvshow",
         "guess": {
             "year": "2015",
-            "resolution": "720p"
+            "resolution": "SD"
         },
         "language": "FRENCH",
         "source": "HDTV",
@@ -47,7 +47,7 @@
         "type": "tvshow",
         "guess": {
             "year": "2015",
-            "resolution": "720p"
+            "resolution": "SD"
         },
         "language": "VOSTFR",
         "source": "HDTV",
@@ -647,7 +647,7 @@
         "type": "tvshow",
         "guess": {
             "year": "2015",
-            "resolution": "720p"
+            "resolution": "SD"
         },
         "language": "VOSTFR",
         "source": "HDTV",
@@ -720,7 +720,7 @@
         "year": "2010",
         "guess": {
             "language": "VO",
-            "resolution": "720p"
+            "resolution": "SD"
         },
         "source": "HDTV",
         "dub": "AC3"
@@ -742,7 +742,7 @@
         "type": "tvshow",
         "guess": {
             "year": "2015",
-            "resolution": "720p"
+            "resolution": "SD"
         },
         "language": "VOSTFR",
         "source": "HDTV",
@@ -1083,7 +1083,7 @@
         "type": "tvshow",
         "guess": {
             "year": "2015",
-            "resolution": "720p"
+            "resolution": "SD"
         },
         "language": "FRENCH",
         "source": "HDTV",
