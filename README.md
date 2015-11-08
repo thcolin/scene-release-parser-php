@@ -7,7 +7,7 @@ The library contains one classe, **thcolin\Release**, the constructor will try t
 ## Installation
 Install with composer :
 ```
-composer requiere thcolin/scene-release-parser
+composer require thcolin/scene-release-parser
 ```
 
 ## Example :
@@ -29,7 +29,7 @@ echo($Release -> getYear()); // null (no tag in the release name)
 echo($Release -> guessYear()); // 2015 (year of the systemà
 
 // RESOLUTION
-echo($Release -> guessResolution()); // 720p
+echo($Release -> getResolution()); // 720p
 
 // SOURCE
 echo($Release -> getSource()); // WEB
