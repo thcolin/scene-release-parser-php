@@ -2,6 +2,8 @@
 	
 	namespace thcolin\SceneReleaseParser;
 	
+	use Exception;
+	
 	class Release{
 		
 		const MOVIE = 'movie';
@@ -243,26 +245,6 @@
 			// Clean
 			$this -> release = str_replace(' ', '.', $this -> release);
 			$this -> title = $this -> release;
-			
-			// Type
-			$this -> title = preg_replace_callback('#[\.\-]S(\d+)[\.\-]?(E(\d+))?([\.\-])#i', function($matches){
-				
-				$this -> type = self::TVSHOW;
-				
-				// 01 -> 1 (numeric)
-				$this -> season = intval($matches[1]);
-				
-				if($matches[3])
-				
-					$this -> episode = intval($matches[3]);
-				
-				return $matches[4];
-				
-			}, $this -> title, 1, $count);
-			
-			if($count == 0)
-			
-				$this -> type = self::MOVIE;
 				
 			// SOURCE, ENCODING, RESOLUTION, DUB, LANGUAGE (unique)
 			foreach(['source', 'encoding', 'resolution', 'dub', 'language'] as $attribute){
@@ -321,6 +303,39 @@
 				
 			}
 			
+			// TYPE
+			$this -> title = preg_replace_callback('#[\.\-]S(\d+)[\.\-]?(E(\d+))?([\.\-])#i', function($matches){
+				
+				$this -> type = self::TVSHOW;
+				
+				// 01 -> 1 (numeric)
+				$this -> season = intval($matches[1]);
+				
+				if($matches[3])
+				
+					$this -> episode = intval($matches[3]);
+				
+				return $matches[4];
+				
+			}, $this -> title, 1, $count);
+			
+			if($count == 0){
+				
+				// Not a Release
+				if(
+					!$this -> resolution &&
+					!$this -> source &&
+					!$this -> dub &&
+					!$this -> encoding
+				)
+				
+					throw new Exception('The string "'.$this -> release.'" is not a correct Scene Release name');
+				
+				// movie
+				$this -> type = self::MOVIE;
+				
+			}
+			
 			// GROUP
 			$this -> title = preg_replace_callback('#\-([a-zA-Z0-9_\.]+)$#', function($matches){
 				
@@ -332,6 +347,7 @@
 			
 			// TITLE
 			$this -> title = str_replace('.', ' ', $this -> title);
+			$this -> title = preg_replace('#\s+#', ' ', $this -> title);
 			$this -> title = ucwords(strtolower($this -> title));
 			
 		}
