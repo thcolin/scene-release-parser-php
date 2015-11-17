@@ -14,6 +14,11 @@
 				'dvdrip',
 				'dvd-rip'
 			],
+			'DVDScr' => [
+				'dvdscr',
+				'dvd-scr',
+				'dvdscreener'
+			],
 			'WEB-DL' => [
 				'webtv',
 				'web-tv',
@@ -41,11 +46,6 @@
 			],
 			'R5' => [
 				'r5'
-			],
-			'DVDScr' => [
-				'dvdscr',
-				'dvd-scr',
-				'dvdscreener'
 			],
 			'HDTV' => [
 				'hdtv',

@@ -1317,5 +1317,20 @@
         "source": "DVDRip",
         "encoding": "XviD",
         "group": "UTT"
+    },
+    "Lone.Survivor.2013.FANSUB.VOSTFR.DVDSCR.XVID.AC3-NIKOo": {
+	    "title": "Lone Survivor",
+	    "type": "movie",
+	    "year": "2013",
+	    "language": "VOSTFR",
+	    "guess": {
+		    "resolution": "SD"
+	    },
+	    "source": "DVDScr",
+	    "encoding": "XviD",
+	    "group": "NIKOo",
+	    "flags": [
+		    "FANSUB"
+	    ]
     }
 }
