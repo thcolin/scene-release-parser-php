@@ -8,10 +8,15 @@
 	$elements = [];
 
 	foreach(explode("\n", $content) as $release){
+		if(!$release){
+			continue;
+		}
+
 		$release = utf8_encode($release);
 		$Release = new Release($release);
 
 		$element = [
+			'generated' => $Release -> __toString(),
 			'title' => utf8_encode($Release -> getTitle()),
 			'type' => utf8_encode($Release -> getType())
 		];

@@ -1,23 +1,25 @@
 {
     "12.Monkeys.S01E01.FRENCH.HDTV.x264-AZR": {
+        "generated": "12.Monkeys.S01E01.FRENCH.HDRip.x264-AZR",
         "title": "12 Monkeys",
         "type": "tvshow",
         "guess": {
-            "year": "2015",
+            "year": "2016",
             "resolution": "SD"
         },
         "language": "FRENCH",
-        "source": "HDTV",
+        "source": "HDRip",
         "encoding": "x264",
         "group": "AZR",
         "season": 1,
         "episode": 1
     },
     "Mr.Robot.S01.PROPER.VOSTFR.720p.WEB-DL.DD5.1.H264-ARK01": {
+        "generated": "Mr.Robot.S01.VOSTFR.720p.WEB-DL.h264-ARK01",
         "title": "Mr Robot",
         "type": "tvshow",
         "guess": {
-            "year": "2015"
+            "year": "2016"
         },
         "language": "VOSTFR",
         "resolution": "720p",
@@ -31,10 +33,11 @@
         "season": 1
     },
     "Nights.In.Rodanthe.TRUEFRENCH.DVDRip.XviD-UNSKiLLED": {
+        "generated": "Nights.In.Rodanthe.TRUEFRENCH.DVDRip.XviD-UNSKiLLED",
         "title": "Nights In Rodanthe",
         "type": "movie",
         "guess": {
-            "year": "2015",
+            "year": "2016",
             "resolution": "SD"
         },
         "language": "TRUEFRENCH",
@@ -43,14 +46,15 @@
         "group": "UNSKiLLED"
     },
     "Arrow.S03E01.FASTSUB.VOSTFR.HDTV.x264-ADDiCTiON": {
+        "generated": "Arrow.S03E01.VOSTFR.HDRip.x264-ADDiCTiON",
         "title": "Arrow",
         "type": "tvshow",
         "guess": {
-            "year": "2015",
+            "year": "2016",
             "resolution": "SD"
         },
         "language": "VOSTFR",
-        "source": "HDTV",
+        "source": "HDRip",
         "encoding": "x264",
         "group": "ADDiCTiON",
         "flags": [
@@ -60,10 +64,11 @@
         "episode": 1
     },
     "Orange.Mecanique.MULTI.DVDRIP.x264.AAC-ECKOES": {
+        "generated": "Orange.Mecanique.MULTI.DVDRip.x264-ECKOES",
         "title": "Orange Mecanique",
         "type": "movie",
         "guess": {
-            "year": "2015",
+            "year": "2016",
             "resolution": "SD"
         },
         "language": "MULTI",
@@ -75,6 +80,7 @@
         ]
     },
     "Arthur.Newman.2012.FRENCH.BDRip.x264-Ryotox": {
+        "generated": "Arthur.Newman.2012.FRENCH.BDRip.x264-Ryotox",
         "title": "Arthur Newman",
         "type": "movie",
         "year": "2012",
@@ -87,6 +93,7 @@
         "group": "Ryotox"
     },
     "Palo.Alto.2013.LIMITED.VOSTFR.BRRip.x264.AC3-S.V": {
+        "generated": "Palo.Alto.2013.VOSTFR.BRRip.x264.AC3-S.V",
         "title": "Palo Alto",
         "type": "movie",
         "year": "2013",
@@ -103,6 +110,7 @@
         ]
     },
     "Barbecue.2014.FRENCH.DVDRiP.XViD-ARTEFAC": {
+        "generated": "Barbecue.2014.FRENCH.DVDRip.XviD-ARTEFAC",
         "title": "Barbecue",
         "type": "movie",
         "year": "2014",
@@ -115,10 +123,11 @@
         "group": "ARTEFAC"
     },
     "Peter.Pan.TRUEFRENCH.DVDRip.XviD.AC3-LiberTeam": {
+        "generated": "Peter.Pan.TRUEFRENCH.DVDRip.XviD.AC3-LiberTeam",
         "title": "Peter Pan",
         "type": "movie",
         "guess": {
-            "year": "2015",
+            "year": "2016",
             "resolution": "SD"
         },
         "language": "TRUEFRENCH",
@@ -128,6 +137,7 @@
         "group": "LiberTeam"
     },
     "Big.Eyes.2014.FRENCH.BDRip.XviD-GLUPS": {
+        "generated": "Big.Eyes.2014.FRENCH.BDRip.XviD-GLUPS",
         "title": "Big Eyes",
         "type": "movie",
         "year": "2014",
@@ -140,6 +150,7 @@
         "group": "GLUPS"
     },
     "Blended.2014.FRENCH.BRRIP XVID AC3-lecorse": {
+        "generated": "Blended.2014.FRENCH.BRRip.XviD.AC3-lecorse",
         "title": "Blended",
         "type": "movie",
         "year": "2014",
@@ -153,6 +164,7 @@
         "group": "lecorse"
     },
     "Pitch.Perfect.2.2015.FRENCH.BDRip.x264-COUAC": {
+        "generated": "Pitch.Perfect.2.2015.FRENCH.BDRip.x264-COUAC",
         "title": "Pitch Perfect 2",
         "type": "movie",
         "year": "2015",
@@ -165,7 +177,8 @@
         "group": "COUAC"
     },
     "Blue. Valentine 2010 French DvDRip Xvid-FwD": {
-        "title": "Blue Valentine",
+        "generated": "Blue.2010.FRENCH.DVDRip.XviD-FwD",
+        "title": "Blue",
         "type": "movie",
         "year": "2010",
         "language": "FRENCH",
@@ -177,6 +190,7 @@
         "group": "FwD"
     },
     "Pixels.2015.FRENCH.BDRip.x264-VENUE": {
+        "generated": "Pixels.2015.FRENCH.BDRip.x264-VENUE",
         "title": "Pixels",
         "type": "movie",
         "year": "2015",
@@ -189,6 +203,7 @@
         "group": "VENUE"
     },
     "Camp.X-Ray.2014.FRENCH.BDRip.x264-PRiDEHD": {
+        "generated": "Camp.X-ray.2014.FRENCH.BDRip.x264-PRiDEHD",
         "title": "Camp X-ray",
         "type": "movie",
         "year": "2014",
@@ -201,6 +216,7 @@
         "group": "PRiDEHD"
     },
     "Pixels.2015.FRENCH.DVDRip.XviD-SVR": {
+        "generated": "Pixels.2015.FRENCH.DVDRip.XviD-SVR",
         "title": "Pixels",
         "type": "movie",
         "year": "2015",
@@ -213,6 +229,7 @@
         "group": "SVR"
     },
     "Platoon.1986.FRENCH.SUBFORCED.BRRip.x264.AC3-FUNKY": {
+        "generated": "Platoon.1986.FRENCH.BRRip.x264.AC3-FUNKY",
         "title": "Platoon",
         "type": "movie",
         "year": "1986",
@@ -229,6 +246,7 @@
         ]
     },
     "Captain.Phillips.2013.FRENCH.DVDRip.x264-TiCKETS": {
+        "generated": "Captain.Phillips.2013.FRENCH.DVDRip.x264-TiCKETS",
         "title": "Captain Phillips",
         "type": "movie",
         "year": "2013",
@@ -241,6 +259,7 @@
         "group": "TiCKETS"
     },
     "Celeste.and.Jesse.Forever.2012.VOSTFR.BDRiP.XviD-NIKOo": {
+        "generated": "Celeste.And.Jesse.Forever.2012.VOSTFR.BDRip.XviD-NIKOo",
         "title": "Celeste And Jesse Forever",
         "type": "movie",
         "year": "2012",
@@ -253,6 +272,7 @@
         "group": "NIKOo"
     },
     "Pompeii.2014.TRUEFRENCH.BRRip.XviD-DesTroY": {
+        "generated": "Pompeii.2014.TRUEFRENCH.BRRip.XviD-DesTroY",
         "title": "Pompeii",
         "type": "movie",
         "year": "2014",
@@ -265,6 +285,7 @@
         "group": "DesTroY"
     },
     "Chef.2014.FRENCH.BDRiP.x264-PRiDEHD": {
+        "generated": "Chef.2014.FRENCH.BDRip.x264-PRiDEHD",
         "title": "Chef",
         "type": "movie",
         "year": "2014",
@@ -277,10 +298,11 @@
         "group": "PRiDEHD"
     },
     "Quand.Harry.Rencontre.Sally.FRENCH.DVDRiP.XviD-Shane": {
+        "generated": "Quand.Harry.Rencontre.Sally.FRENCH.DVDRip.XviD-Shane",
         "title": "Quand Harry Rencontre Sally",
         "type": "movie",
         "guess": {
-            "year": "2015",
+            "year": "2016",
             "resolution": "SD"
         },
         "language": "FRENCH",
@@ -289,15 +311,18 @@
         "group": "Shane"
     },
     "Qu.Est.Ce.Qu.On.a.Fait.au.Bon.Dieu.2014.FRENCH.720p.mHD.x264-ExPLiCiT": {
-        "title": "Qu Est Ce Qu On A Fait Au Bon Dieu Mhd",
+        "generated": "Qu.Est.Ce.Qu.On.A.Fait.Au.Bon.Dieu.2014.FRENCH.720p.HDRip.x264-ExPLiCiT",
+        "title": "Qu Est Ce Qu On A Fait Au Bon Dieu",
         "type": "movie",
         "year": "2014",
         "language": "FRENCH",
         "resolution": "720p",
+        "source": "HDRip",
         "encoding": "x264",
         "group": "ExPLiCiT"
     },
     "Rush.2013.FRENCH.BDRip.x264-Thursday16th": {
+        "generated": "Rush.2013.FRENCH.BDRip.x264-Thursday16th",
         "title": "Rush",
         "type": "movie",
         "year": "2013",
@@ -310,6 +335,7 @@
         "group": "Thursday16th"
     },
     "Serena.2014.FRENCH.DVDRip.x264-FUTiL": {
+        "generated": "Serena.2014.FRENCH.DVDRip.x264-FUTiL",
         "title": "Serena",
         "type": "movie",
         "year": "2014",
@@ -322,6 +348,7 @@
         "group": "FUTiL"
     },
     "Dope.2015.SUBFORCED.FRENCH.BRRip.XviD-SVR": {
+        "generated": "Dope.2015.FRENCH.BRRip.XviD-SVR",
         "title": "Dope",
         "type": "movie",
         "year": "2015",
@@ -337,6 +364,7 @@
         ]
     },
     "Serendipity.2001.FRENCH.BRRip.x264.AC3-CHARTAIR": {
+        "generated": "Serendipity.2001.FRENCH.BRRip.x264.AC3-CHARTAIR",
         "title": "Serendipity",
         "type": "movie",
         "year": "2001",
@@ -350,6 +378,7 @@
         "group": "CHARTAIR"
     },
     "Drinking.Buddies.2013.LIMITED.DVDRip.x264-NODLABS": {
+        "generated": "Drinking.Buddies.2013.DVDRip.x264-NODLABS",
         "title": "Drinking Buddies",
         "type": "movie",
         "year": "2013",
@@ -365,10 +394,11 @@
         ]
     },
     "Shrek.Tetralogie.TRUEFRENCH.DVDRIP.XVID.AC3.5.1-lanesra13": {
+        "generated": "Shrek.Tetralogie.TRUEFRENCH.DVDRip.XviD.AC3-lanesra13",
         "title": "Shrek Tetralogie",
         "type": "movie",
         "guess": {
-            "year": "2015",
+            "year": "2016",
             "resolution": "SD"
         },
         "language": "TRUEFRENCH",
@@ -381,10 +411,11 @@
         ]
     },
     "Dumb.And.Dumber.FRENCH.BRRip.XviD-LKT": {
+        "generated": "Dumb.And.Dumber.FRENCH.BRRip.XviD-LKT",
         "title": "Dumb And Dumber",
         "type": "movie",
         "guess": {
-            "year": "2015",
+            "year": "2016",
             "resolution": "SD"
         },
         "language": "FRENCH",
@@ -393,6 +424,7 @@
         "group": "LKT"
     },
     "Silver.Linings.Playbook.2012.TRUEFRENCH.BDRip.x264.AC3-TKS": {
+        "generated": "Silver.Linings.Playbook.2012.TRUEFRENCH.BDRip.x264.AC3-TKS",
         "title": "Silver Linings Playbook",
         "type": "movie",
         "year": "2012",
@@ -406,6 +438,7 @@
         "group": "TKS"
     },
     "Eden.Lost.in.Music.2014.FRENCH.BDRip.x264-MELBA": {
+        "generated": "Eden.Lost.In.Music.2014.FRENCH.BDRip.x264-MELBA",
         "title": "Eden Lost In Music",
         "type": "movie",
         "year": "2014",
@@ -418,6 +451,7 @@
         "group": "MELBA"
     },
     "Sin.City.A.Dame.to.Kill.For.2014.FRENCH.BDRip.x264.AC3-GLUPS": {
+        "generated": "Sin.City.A.Dame.To.Kill.For.2014.FRENCH.BDRip.x264.AC3-GLUPS",
         "title": "Sin City A Dame To Kill For",
         "type": "movie",
         "year": "2014",
@@ -431,6 +465,7 @@
         "group": "GLUPS"
     },
     "Endless Love 2014 FRENCH 720p BluRay x264-CARPEDIEM": {
+        "generated": "Endless.Love.2014.FRENCH.720p.BLURAY.x264-CARPEDIEM",
         "title": "Endless Love",
         "type": "movie",
         "year": "2014",
@@ -441,6 +476,7 @@
         "group": "CARPEDIEM"
     },
     "Source.Code.2011.FRENCH.BRRip.x264.AC3-FUNKY": {
+        "generated": "Source.Code.2011.FRENCH.BRRip.x264.AC3-FUNKY",
         "title": "Source Code",
         "type": "movie",
         "year": "2011",
@@ -454,6 +490,7 @@
         "group": "FUNKY"
     },
     "Enemy.2013.LIMITED.FRENCH.SUBFORCED.BRRip.x264.AC3-SP3CTR3": {
+        "generated": "Enemy.2013.FRENCH.BRRip.x264.AC3-SP3CTR3",
         "title": "Enemy",
         "type": "movie",
         "year": "2013",
@@ -471,6 +508,7 @@
         ]
     },
     "Sous.Les.Jupes.Des.Filles.2014.FRENCH.BDRip.XviD-GLUPS": {
+        "generated": "Sous.Les.Jupes.Des.Filles.2014.FRENCH.BDRip.XviD-GLUPS",
         "title": "Sous Les Jupes Des Filles",
         "type": "movie",
         "year": "2014",
@@ -483,10 +521,11 @@
         "group": "GLUPS"
     },
     "Eureka.S05.FRENCH.LD.DVDRiP.XViD-EPZ": {
+        "generated": "Eureka.S05.FRENCH.DVDRip.XviD.LD-EPZ",
         "title": "Eureka",
         "type": "tvshow",
         "guess": {
-            "year": "2015",
+            "year": "2016",
             "resolution": "SD"
         },
         "language": "FRENCH",
@@ -497,6 +536,7 @@
         "season": 5
     },
     "Exam.2009.LiMiTED.FRENCH.DVDRip.XviD": {
+        "generated": "Exam.2009.FRENCH.DVDRip.XviD-NOTEAM",
         "title": "Exam",
         "type": "movie",
         "year": "2009",
@@ -511,6 +551,7 @@
         ]
     },
     "Ex.Machina.2015.FRENCH.SUBFORCED.BRRip.XviD.AC3-CHARTAIR": {
+        "generated": "Ex.Machina.2015.FRENCH.BRRip.XviD.AC3-CHARTAIR",
         "title": "Ex Machina",
         "type": "movie",
         "year": "2015",
@@ -527,10 +568,11 @@
         ]
     },
     "Factotum.FRENCH.DVDRiP.XviD-ZANBiC": {
+        "generated": "Factotum.FRENCH.DVDRip.XviD-ZANBiC",
         "title": "Factotum",
         "type": "movie",
         "guess": {
-            "year": "2015",
+            "year": "2016",
             "resolution": "SD"
         },
         "language": "FRENCH",
@@ -539,6 +581,7 @@
         "group": "ZANBiC"
     },
     "Still.Alice.2014.TRUEFRENCH.BDRip.XviD-DesTroY": {
+        "generated": "Still.Alice.2014.TRUEFRENCH.BDRip.XviD-DesTroY",
         "title": "Still Alice",
         "type": "movie",
         "year": "2014",
@@ -551,6 +594,7 @@
         "group": "DesTroY"
     },
     "Fish.Tank.2009.FRENCH.BRRip.x264.AC3-SALEM": {
+        "generated": "Fish.Tank.2009.FRENCH.BRRip.x264.AC3-SALEM",
         "title": "Fish Tank",
         "type": "movie",
         "year": "2009",
@@ -564,6 +608,7 @@
         "group": "SALEM"
     },
     "Taken.3.2014.EXTENDED.FRENCH.BDRip.XviD-GLUPS": {
+        "generated": "Taken.3.2014.FRENCH.BDRip.XviD-GLUPS",
         "title": "Taken 3",
         "type": "movie",
         "year": "2014",
@@ -579,6 +624,7 @@
         ]
     },
     "Ted.2012.TRUEFRENCH.720p.BluRay.x264.AC3": {
+        "generated": "Ted.2012.TRUEFRENCH.720p.BLURAY.x264.AC3-NOTEAM",
         "title": "Ted",
         "type": "movie",
         "year": "2012",
@@ -589,6 +635,7 @@
         "encoding": "x264"
     },
     "Furious.Seven.2015.EXTENDED.TRUEFRENCH.BDRip.x264.AC3-GLUPS": {
+        "generated": "Furious.Seven.2015.TRUEFRENCH.BDRip.x264.AC3-GLUPS",
         "title": "Furious Seven",
         "type": "movie",
         "year": "2015",
@@ -605,6 +652,7 @@
         ]
     },
     "Ted.2.2015.UNRATED.FRENCH.720p.WEB-DL.DD5.1.H264": {
+        "generated": "Ted.2.2015.FRENCH.720p.WEB-DL.h264-NOTEAM",
         "title": "Ted 2",
         "type": "movie",
         "year": "2015",
@@ -618,6 +666,7 @@
         ]
     },
     "Fury.2014.FRENCH.BDRip.x264-ROUGH": {
+        "generated": "Fury.2014.FRENCH.BDRip.x264-ROUGH",
         "title": "Fury",
         "type": "movie",
         "year": "2014",
@@ -630,6 +679,7 @@
         "group": "ROUGH"
     },
     "Gravity.2013.FRENCH.BRRip.XviD.AC3-S.V": {
+        "generated": "Gravity.2013.FRENCH.BRRip.XviD.AC3-S.V",
         "title": "Gravity",
         "type": "movie",
         "year": "2013",
@@ -643,14 +693,15 @@
         "group": "S.V"
     },
     "The.100.S01E01.FASTSUB.VOSTFR.HDTV.XviD-ADDiCTiON": {
+        "generated": "The.100.S01E01.VOSTFR.HDRip.XviD-ADDiCTiON",
         "title": "The 100",
         "type": "tvshow",
         "guess": {
-            "year": "2015",
+            "year": "2016",
             "resolution": "SD"
         },
         "language": "VOSTFR",
-        "source": "HDTV",
+        "source": "HDRip",
         "encoding": "XviD",
         "group": "ADDiCTiON",
         "flags": [
@@ -660,6 +711,7 @@
         "episode": 1
     },
     "Green.Zone.2010.TRUEFRENCH.SUBFORCED.DVDRIP.XVID-KNOB": {
+        "generated": "Green.Zone.2010.TRUEFRENCH.DVDRip.XviD-KNOB",
         "title": "Green Zone",
         "type": "movie",
         "year": "2010",
@@ -675,6 +727,7 @@
         ]
     },
     "The.Angriest.Man.in.Brooklyn.2014.FRENCH.BDRip.x264-PRiDEHD": {
+        "generated": "The.Angriest.Man.In.Brooklyn.2014.FRENCH.BDRip.x264-PRiDEHD",
         "title": "The Angriest Man In Brooklyn",
         "type": "movie",
         "year": "2014",
@@ -687,6 +740,7 @@
         "group": "PRiDEHD"
     },
     "Hannibal.2001.TRUEFRENCH.SUBFORCED.BRRip.x264.AC3-FUNKY": {
+        "generated": "Hannibal.2001.TRUEFRENCH.BRRip.x264.AC3-FUNKY",
         "title": "Hannibal",
         "type": "movie",
         "year": "2001",
@@ -703,6 +757,7 @@
         ]
     },
     "The.Drop.2014.FRENCH.BDRip.x264-PRiDEHD": {
+        "generated": "The.Drop.2014.FRENCH.BDRip.x264-PRiDEHD",
         "title": "The Drop",
         "type": "movie",
         "year": "2014",
@@ -715,6 +770,7 @@
         "group": "PRiDEHD"
     },
     "HappyThankYouMorePlease.2010.HDRip.AC3": {
+        "generated": "Happythankyoumoreplease.2010.HDRip.AC3-NOTEAM",
         "title": "Happythankyoumoreplease",
         "type": "movie",
         "year": "2010",
@@ -722,10 +778,11 @@
             "language": "VO",
             "resolution": "SD"
         },
-        "source": "HDTV",
+        "source": "HDRip",
         "dub": "AC3"
     },
     "The.Gambler.2014.FRENCH.BDRip.x264-VENUE": {
+        "generated": "The.Gambler.2014.FRENCH.BDRip.x264-VENUE",
         "title": "The Gambler",
         "type": "movie",
         "year": "2014",
@@ -738,14 +795,15 @@
         "group": "VENUE"
     },
     "The.Last.Man.On.Earth.S01E01.FASTSUB.VOSTFR.HDTV.XviD-ADDiCTiON": {
+        "generated": "The.Last.Man.On.Earth.S01E01.VOSTFR.HDRip.XviD-ADDiCTiON",
         "title": "The Last Man On Earth",
         "type": "tvshow",
         "guess": {
-            "year": "2015",
+            "year": "2016",
             "resolution": "SD"
         },
         "language": "VOSTFR",
-        "source": "HDTV",
+        "source": "HDRip",
         "encoding": "XviD",
         "group": "ADDiCTiON",
         "flags": [
@@ -755,6 +813,7 @@
         "episode": 1
     },
     "Hector.and.the.Search.for.Happiness.2014.FRENCH.DVDRiP.XviD.AC3-S.V": {
+        "generated": "Hector.And.The.Search.For.Happiness.2014.FRENCH.DVDRip.XviD.AC3-S.V",
         "title": "Hector And The Search For Happiness",
         "type": "movie",
         "year": "2014",
@@ -768,6 +827,7 @@
         "group": "S.V"
     },
     "The.Longest.Ride.2015.FRENCH.720p.BluRay.x264.AC3-BUITONIO": {
+        "generated": "The.Longest.Ride.2015.FRENCH.720p.BLURAY.x264.AC3-BUITONIO",
         "title": "The Longest Ride",
         "type": "movie",
         "year": "2015",
@@ -779,6 +839,7 @@
         "group": "BUITONIO"
     },
     "Horrible.Bosses.2.2014.THEATRICAL.FRENCH.BDRip.XviD.AC3-DesTroY": {
+        "generated": "Horrible.Bosses.2.2014.FRENCH.BDRip.XviD.AC3-DesTroY",
         "title": "Horrible Bosses 2",
         "type": "movie",
         "year": "2014",
@@ -795,6 +856,7 @@
         ]
     },
     "The.Longest.Ride.2015.FRENCH.BDRip.x264-VENUE": {
+        "generated": "The.Longest.Ride.2015.FRENCH.BDRip.x264-VENUE",
         "title": "The Longest Ride",
         "type": "movie",
         "year": "2015",
@@ -807,6 +869,7 @@
         "group": "VENUE"
     },
     "How.Do.You.Know.2010.TRUEFRENCH.DVDRip.XviD-LiberTeam": {
+        "generated": "How.Do.You.Know.2010.TRUEFRENCH.DVDRip.XviD-LiberTeam",
         "title": "How Do You Know",
         "type": "movie",
         "year": "2010",
@@ -819,10 +882,11 @@
         "group": "LiberTeam"
     },
     "The.Man.In.The.High.Castle.S01E01.Pilot.720p.WEBRip.DD5.1.x264-FtDL": {
-        "title": "The Man In The High Castle Pilot",
+        "generated": "The.Man.In.The.High.Castle.S01E01.720p.WEB-DL.x264-FtDL",
+        "title": "The Man In The High Castle",
         "type": "tvshow",
         "guess": {
-            "year": "2015",
+            "year": "2016",
             "language": "VO"
         },
         "resolution": "720p",
@@ -836,6 +900,7 @@
         "episode": 1
     },
     "How.to.Train.Your.Dragon.2.2014.FRENCH.BDRip.x264-PRiDEHD": {
+        "generated": "How.To.Train.Your.Dragon.2.2014.FRENCH.BDRip.x264-PRiDEHD",
         "title": "How To Train Your Dragon 2",
         "type": "movie",
         "year": "2014",
@@ -848,6 +913,7 @@
         "group": "PRiDEHD"
     },
     "The.Master.2012.FRENCH.BDRiP.XViD-AViTECH": {
+        "generated": "The.Master.2012.FRENCH.BDRip.XviD-AViTECH",
         "title": "The Master",
         "type": "movie",
         "year": "2012",
@@ -860,6 +926,7 @@
         "group": "AViTECH"
     },
     "The.Maze.Runner.2014.TRUEFRENCH.BDRip.XviD-GLUPS": {
+        "generated": "The.Maze.Runner.2014.TRUEFRENCH.BDRip.XviD-GLUPS",
         "title": "The Maze Runner",
         "type": "movie",
         "year": "2014",
@@ -872,6 +939,7 @@
         "group": "GLUPS"
     },
     "Inherent.Vice.2014.FRENCH.BRRip.XviD-DesTroY": {
+        "generated": "Inherent.Vice.2014.FRENCH.BRRip.XviD-DesTroY",
         "title": "Inherent Vice",
         "type": "movie",
         "year": "2014",
@@ -884,6 +952,7 @@
         "group": "DesTroY"
     },
     "The Spirit 2009 TRUEFRENCH DVDRiP XViD AC3-FwD": {
+        "generated": "The.Spirit.2009.TRUEFRENCH.DVDRip.XviD.AC3-FwD",
         "title": "The Spirit",
         "type": "movie",
         "year": "2009",
@@ -897,7 +966,8 @@
         "group": "FwD"
     },
     "La.French.2014.FRENCH.BRRip.x264.AC3-DesTroY": {
-        "title": "La French",
+        "generated": "Laench.2014.FRENCH.BRRip.x264.AC3-DesTroY",
+        "title": "Laench",
         "type": "movie",
         "year": "2014",
         "language": "FRENCH",
@@ -910,6 +980,7 @@
         "group": "DesTroY"
     },
     "The Ten 2011 TRUEFRENCH SUBFORCED DVDRIP XVID-FwD": {
+        "generated": "The.Ten.2011.TRUEFRENCH.DVDRip.XviD-FwD",
         "title": "The Ten",
         "type": "movie",
         "year": "2011",
@@ -925,19 +996,19 @@
         ]
     },
     "La.Planete.Des.Singes.L'affrontement.TRUEFRENCH.720p.x264.HDLIGHT": {
+        "generated": "La.Planete.Des.Singes.L'affrontement.TRUEFRENCH.720p.HDRip.x264-NOTEAM",
         "title": "La Planete Des Singes L'affrontement",
         "type": "movie",
         "guess": {
-            "year": "2015"
+            "year": "2016"
         },
         "language": "TRUEFRENCH",
         "resolution": "720p",
-        "encoding": "x264",
-        "flags": [
-            "HDLIGHT"
-        ]
+        "source": "HDRip",
+        "encoding": "x264"
     },
     "The.Wind.Rises.2013.FRENCH.BRRip.x264.AC3-DesTroY": {
+        "generated": "The.Wind.Rises.2013.FRENCH.BRRip.x264.AC3-DesTroY",
         "title": "The Wind Rises",
         "type": "movie",
         "year": "2013",
@@ -951,10 +1022,11 @@
         "group": "DesTroY"
     },
     "La.Veritable.Histoire.Du.Petit.Chaperon.Rouge.FRENCH.DVDRiP.XviD": {
+        "generated": "La.Veritable.Histoire.Du.Petit.Chaperon.Rouge.FRENCH.DVDRip.XviD-NOTEAM",
         "title": "La Veritable Histoire Du Petit Chaperon Rouge",
         "type": "movie",
         "guess": {
-            "year": "2015",
+            "year": "2016",
             "resolution": "SD"
         },
         "language": "FRENCH",
@@ -962,6 +1034,7 @@
         "encoding": "XviD"
     },
     "The.Worlds.End.2013.FRENCH.SUBFORCED.BRRip.x264.AC3-FUNKY": {
+        "generated": "The.Worlds.End.2013.FRENCH.BRRip.x264.AC3-FUNKY",
         "title": "The Worlds End",
         "type": "movie",
         "year": "2013",
@@ -978,6 +1051,7 @@
         ]
     },
     "La.Vie.D.Adele.2013.FRENCH.WORKPRINT.XViD-ATN": {
+        "generated": "La.Vie.D.Adele.2013.FRENCH.XviD-ATN",
         "title": "La Vie D Adele",
         "type": "movie",
         "year": "2013",
@@ -992,6 +1066,7 @@
         ]
     },
     "Tomorrowland.2015.TRUEFRENCH.720p.WEB-DL.AC3.x264-TonTon": {
+        "generated": "Tomorrowland.2015.TRUEFRENCH.720p.WEB-DL.x264.AC3-TonTon",
         "title": "Tomorrowland",
         "type": "movie",
         "year": "2015",
@@ -1003,6 +1078,7 @@
         "group": "TonTon"
     },
     "Les.Gorilles.2014.TRUEFRENCH.WEBRip.XviD-SVR": {
+        "generated": "Les.Gorilles.2014.TRUEFRENCH.WEB-DL.XviD-SVR",
         "title": "Les Gorilles",
         "type": "movie",
         "year": "2014",
@@ -1015,6 +1091,7 @@
         "group": "SVR"
     },
     "Total.recall.1990.FRENCH.BRRIP.X264.AC3-KENPACHI": {
+        "generated": "Total.Recall.1990.FRENCH.BRRip.x264.AC3-KENPACHI",
         "title": "Total Recall",
         "type": "movie",
         "year": "1990",
@@ -1028,6 +1105,7 @@
         "group": "KENPACHI"
     },
     "Liberal.Arts.2012.FANSUB.VOSTFR.BRRiP.XviD-NIKOo": {
+        "generated": "Liberal.Arts.2012.VOSTFR.BRRip.XviD-NIKOo",
         "title": "Liberal Arts",
         "type": "movie",
         "year": "2012",
@@ -1043,6 +1121,7 @@
         ]
     },
     "Transformers.Age.Of.Extinction.2014.TRUEFRENCH.DVDRip.x264.AC3-DesTroY": {
+        "generated": "Transformers.Age.Of.Extinction.2014.TRUEFRENCH.DVDRip.x264.AC3-DesTroY",
         "title": "Transformers Age Of Extinction",
         "type": "movie",
         "year": "2014",
@@ -1056,6 +1135,7 @@
         "group": "DesTroY"
     },
     "Un Peu.Beaucoup.Aveuglement.2014.FRENCH.WEB-DL.1080p.x264-SVR": {
+        "generated": "Un.Peu.Beaucoup.Aveuglement.2014.FRENCH.1080p.WEB-DL.x264-SVR",
         "title": "Un Peu Beaucoup Aveuglement",
         "type": "movie",
         "year": "2014",
@@ -1066,6 +1146,7 @@
         "group": "SVR"
     },
     "Magic.In.The.Moonlight.2014.FRENCH.BRRip.x264.AC3-DesTroY": {
+        "generated": "Magic.In.The.Moonlight.2014.FRENCH.BRRip.x264.AC3-DesTroY",
         "title": "Magic In The Moonlight",
         "type": "movie",
         "year": "2014",
@@ -1079,20 +1160,22 @@
         "group": "DesTroY"
     },
     "Manhattan.S01E01.FRENCH.HDTV.x264-CaCoLaC": {
+        "generated": "Manhattan.S01E01.FRENCH.HDRip.x264-CaCoLaC",
         "title": "Manhattan",
         "type": "tvshow",
         "guess": {
-            "year": "2015",
+            "year": "2016",
             "resolution": "SD"
         },
         "language": "FRENCH",
-        "source": "HDTV",
+        "source": "HDRip",
         "encoding": "x264",
         "group": "CaCoLaC",
         "season": 1,
         "episode": 1
     },
     "Ma.Premiere.Fois.2012.FRENCH.720p.BluRay.x264-CARPEDIEM": {
+        "generated": "Ma.Premiere.Fois.2012.FRENCH.720p.BLURAY.x264-CARPEDIEM",
         "title": "Ma Premiere Fois",
         "type": "movie",
         "year": "2012",
@@ -1103,14 +1186,15 @@
         "group": "CARPEDIEM"
     },
     "Marvels.Agent.Carter.S01E01.FASTSUB.VOSTFR.720p.HDTV.x264-ADDiCTiON": {
+        "generated": "Marvels.Agent.Carter.S01E01.VOSTFR.720p.HDRip.x264-ADDiCTiON",
         "title": "Marvels Agent Carter",
         "type": "tvshow",
         "guess": {
-            "year": "2015"
+            "year": "2016"
         },
         "language": "VOSTFR",
         "resolution": "720p",
-        "source": "HDTV",
+        "source": "HDRip",
         "encoding": "x264",
         "group": "ADDiCTiON",
         "flags": [
@@ -1120,47 +1204,50 @@
         "episode": 1
     },
     "Veronica Mars 2014 TRUEFRENCH BDRip XviD AC3-FrIeNdS": {
+        "generated": "Veronica.Mars.2014.FRENCH.BDRip.XviD.AC3-NOTEAM",
         "title": "Veronica Mars",
         "type": "movie",
         "year": "2014",
-        "language": "TRUEFRENCH",
+        "language": "FRENCH",
         "guess": {
             "resolution": "SD"
         },
         "source": "BDRip",
         "dub": "AC3",
-        "encoding": "XviD",
-        "group": "FrIeNdS"
+        "encoding": "XviD"
     },
     "Marvels.Agent.Carter.S01E01.VOSTFR.720p.HDTV.x264-LTL": {
+        "generated": "Marvels.Agent.Carter.S01E01.VOSTFR.720p.HDRip.x264-LTL",
         "title": "Marvels Agent Carter",
         "type": "tvshow",
         "guess": {
-            "year": "2015"
+            "year": "2016"
         },
         "language": "VOSTFR",
         "resolution": "720p",
-        "source": "HDTV",
+        "source": "HDRip",
         "encoding": "x264",
         "group": "LTL",
         "season": 1,
         "episode": 1
     },
     "Marvels.Agent.Carter.S01E02.VOSTFR.720p.HDTV.x264-LTL": {
+        "generated": "Marvels.Agent.Carter.S01E02.VOSTFR.720p.HDRip.x264-LTL",
         "title": "Marvels Agent Carter",
         "type": "tvshow",
         "guess": {
-            "year": "2015"
+            "year": "2016"
         },
         "language": "VOSTFR",
         "resolution": "720p",
-        "source": "HDTV",
+        "source": "HDRip",
         "encoding": "x264",
         "group": "LTL",
         "season": 1,
         "episode": 2
     },
     "Water.For.Elephants.2011.FRENCH.SUBFORCED.BRRip.x264.AC3-FUNKY": {
+        "generated": "Water.For.Elephants.2011.FRENCH.BRRip.x264.AC3-FUNKY",
         "title": "Water For Elephants",
         "type": "movie",
         "year": "2011",
@@ -1177,10 +1264,11 @@
         ]
     },
     "Marvels.Agent.Carter.S01E03.VOSTFR.720p.WEB-DL.DD5.1.H.264-LTL": {
+        "generated": "Marvels.Agent.Carter.S01E03.VOSTFR.720p.WEB-DL.h264-LTL",
         "title": "Marvels Agent Carter",
         "type": "tvshow",
         "guess": {
-            "year": "2015"
+            "year": "2016"
         },
         "language": "VOSTFR",
         "resolution": "720p",
@@ -1194,10 +1282,11 @@
         "episode": 3
     },
     "Weeds.S01.REPACK.MULTI.720p.BluRay.x264-DWS": {
+        "generated": "Weeds.S01.MULTI.720p.BLURAY.x264-DWS",
         "title": "Weeds",
         "type": "tvshow",
         "guess": {
-            "year": "2015"
+            "year": "2016"
         },
         "language": "MULTI",
         "resolution": "720p",
@@ -1210,10 +1299,11 @@
         "season": 1
     },
     "Marvels.Agent.Carter.S01.VOSTFR.720p.WEB-DL.DD5.1.H.264-SEEHD": {
+        "generated": "Marvels.Agent.Carter.S01.VOSTFR.720p.WEB-DL.h264-SEEHD",
         "title": "Marvels Agent Carter",
         "type": "tvshow",
         "guess": {
-            "year": "2015"
+            "year": "2016"
         },
         "language": "VOSTFR",
         "resolution": "720p",
@@ -1226,6 +1316,7 @@
         "season": 1
     },
     "While.Were.Young.2014.FRENCH.BDRip.x264-PRiDEHD": {
+        "generated": "While.Were.Young.2014.FRENCH.BDRip.x264-PRiDEHD",
         "title": "While Were Young",
         "type": "movie",
         "year": "2014",
@@ -1238,6 +1329,7 @@
         "group": "PRiDEHD"
     },
     "White.Bird.In.A.Blizzard.2014.LiMiTED.FRENCH.DVDRip.XviD.AC3-DesTroY": {
+        "generated": "White.Bird.In.A.Blizzard.2014.FRENCH.DVDRip.XviD.AC3-DesTroY",
         "title": "White Bird In A Blizzard",
         "type": "movie",
         "year": "2014",
@@ -1254,6 +1346,7 @@
         ]
     },
     "Meet Bill 2012 TRUEFRENCH DvDRiP Xvid-TFTD": {
+        "generated": "Meet.Bill.2012.TRUEFRENCH.DVDRip.XviD-TFTD",
         "title": "Meet Bill",
         "type": "movie",
         "year": "2012",
@@ -1266,6 +1359,7 @@
         "group": "TFTD"
     },
     "Wild.Child.2008.TRUEFRENCH.BRRip.XviD.AC3-LiberTeam": {
+        "generated": "Wild.Child.2008.TRUEFRENCH.BRRip.XviD.AC3-LiberTeam",
         "title": "Wild Child",
         "type": "movie",
         "year": "2008",
@@ -1279,6 +1373,7 @@
         "group": "LiberTeam"
     },
     "Mommy.2014.FRENCH.BDRip.x264-PRiDEHD": {
+        "generated": "Mommy.2014.FRENCH.BDRip.x264-PRiDEHD",
         "title": "Mommy",
         "type": "movie",
         "year": "2014",
@@ -1291,6 +1386,7 @@
         "group": "PRiDEHD"
     },
     "With.This.Ring.2015.RERiP.FRENCH.DVDRip.x264.AC3-DesTroY": {
+        "generated": "With.This.Ring.2015.FRENCH.DVDRip.x264.AC3-DesTroY",
         "title": "With This Ring",
         "type": "movie",
         "year": "2015",
@@ -1307,6 +1403,7 @@
         ]
     },
     "Women.In.Trouble.2011.TRUEFRENCH.DVDRiP.XViD-UTT": {
+        "generated": "Women.In.Trouble.2011.TRUEFRENCH.DVDRip.XviD-UTT",
         "title": "Women In Trouble",
         "type": "movie",
         "year": "2011",
@@ -1319,18 +1416,204 @@
         "group": "UTT"
     },
     "Lone.Survivor.2013.FANSUB.VOSTFR.DVDSCR.XVID.AC3-NIKOo": {
-	    "title": "Lone Survivor",
-	    "type": "movie",
-	    "year": "2013",
-	    "language": "VOSTFR",
-	    "guess": {
-		    "resolution": "SD"
-	    },
-	    "source": "DVDScr",
-	    "encoding": "XviD",
-	    "group": "NIKOo",
-	    "flags": [
-		    "FANSUB"
-	    ]
+        "generated": "Lone.Survivor.2013.VOSTFR.DVDScr.XviD.AC3-NIKOo",
+        "title": "Lone Survivor",
+        "type": "movie",
+        "year": "2013",
+        "language": "VOSTFR",
+        "guess": {
+            "resolution": "SD"
+        },
+        "source": "DVDScr",
+        "dub": "AC3",
+        "encoding": "XviD",
+        "group": "NIKOo",
+        "flags": [
+            "FANSUB"
+        ]
+    },
+    "Benjamin Button [x264] [HD 720p] [LUCN] [FR]": {
+        "generated": "Benjamin.Button.FRENCH.720p.HDRip.x264-NOTEAM",
+        "title": "Benjamin Button",
+        "type": "movie",
+        "guess": {
+            "year": "2016"
+        },
+        "language": "FRENCH",
+        "resolution": "720p",
+        "source": "HDRip",
+        "encoding": "x264"
+    },
+    "Jamais entre amis (2015) [1080p] MULTI (VFQ-VOA) Bluray x264 AC3-PopHD (Sleeping with Other People)": {
+        "generated": "Jamais.Entre.Amis.2015.MULTI.1080p.BLURAY.x264.AC3-PopHD",
+        "title": "Jamais Entre Amis",
+        "type": "movie",
+        "year": "2015",
+        "language": "MULTI",
+        "resolution": "1080p",
+        "source": "BLURAY",
+        "dub": "AC3",
+        "encoding": "x264",
+        "group": "PopHD"
+    },
+    "La Vie revee de Walter Mitty [1080p] MULTi 2013 BluRay x264-Pop (The Secret Life Of Walter Mitty)": {
+        "generated": "La.Vie.Revee.De.Walter.Mitty.2013.MULTI.1080p.BLURAY.x264-Pop",
+        "title": "La Vie Revee De Walter Mitty",
+        "type": "movie",
+        "year": "2013",
+        "language": "MULTI",
+        "resolution": "1080p",
+        "source": "BLURAY",
+        "encoding": "x264",
+        "group": "Pop"
+    },
+    "Le Nouveau Stagiaire (2015) The Intern - Multi 1080p - x264 AAC 5.1 - CCATS": {
+        "generated": "Le.Nouveau.Stagiaire.2015.MULTI.1080p.x264-CCATS",
+        "title": "Le Nouveau Stagiaire",
+        "type": "movie",
+        "year": "2015",
+        "language": "MULTI",
+        "resolution": "1080p",
+        "encoding": "x264",
+        "group": "CCATS",
+        "flags": [
+            "AAC",
+            "DD5.1"
+        ]
+    },
+    "Le prestige (2006) (The Prestige) 720p x264 AAC 5.1 MULTI [NOEX]": {
+        "generated": "Le.Prestige.2006.MULTI.720p.x264-NOTEAM",
+        "title": "Le Prestige",
+        "type": "movie",
+        "year": "2006",
+        "language": "MULTI",
+        "resolution": "720p",
+        "encoding": "x264",
+        "flags": [
+            "AAC",
+            "DD5.1"
+        ]
+    },
+    "Les 4 Fantastiques 2015 Truefrench 720p x264 AAC PIXEL": {
+        "generated": "Les.4.Fantastiques.2015.TRUEFRENCH.720p.x264-NOTEAM",
+        "title": "Les 4 Fantastiques",
+        "type": "movie",
+        "year": "2015",
+        "language": "TRUEFRENCH",
+        "resolution": "720p",
+        "encoding": "x264",
+        "flags": [
+            "AAC"
+        ]
+    },
+    "One.For.the.Money.2012.1080p.HDrip.French.x264 (by kimo)": {
+        "generated": "One.For.The.Money.2012.FRENCH.1080p.HDRip.x264-NOTEAM",
+        "title": "One For The Money",
+        "type": "movie",
+        "year": "2012",
+        "language": "FRENCH",
+        "resolution": "1080p",
+        "source": "HDRip",
+        "encoding": "x264"
+    },
+    "Star Wars Episode 1 La Menace fantome 1999 Truefrench BDrip x264-BBer": {
+        "generated": "Star.Wars.Episode.1.La.Menace.Fantome.1999.TRUEFRENCH.BDRip.x264-BBer",
+        "title": "Star Wars Episode 1 La Menace Fantome",
+        "type": "movie",
+        "year": "1999",
+        "language": "TRUEFRENCH",
+        "guess": {
+            "resolution": "SD"
+        },
+        "source": "BDRip",
+        "encoding": "x264",
+        "group": "BBer"
+    },
+    "Star Wars Episode 2 L'Attaque des clones 2002 Truefrench BDrip x264-BBer": {
+        "generated": "Star.Wars.Episode.2.L'attaque.Des.Clones.2002.TRUEFRENCH.BDRip.x264-BBer",
+        "title": "Star Wars Episode 2 L'attaque Des Clones",
+        "type": "movie",
+        "year": "2002",
+        "language": "TRUEFRENCH",
+        "guess": {
+            "resolution": "SD"
+        },
+        "source": "BDRip",
+        "encoding": "x264",
+        "group": "BBer"
+    },
+    "Star Wars Episode 3 La Revanche des Sith 2005 Truefrench BDrip x264-BBer": {
+        "generated": "Star.Wars.Episode.3.La.Revanche.Des.Sith.2005.TRUEFRENCH.BDRip.x264-BBer",
+        "title": "Star Wars Episode 3 La Revanche Des Sith",
+        "type": "movie",
+        "year": "2005",
+        "language": "TRUEFRENCH",
+        "guess": {
+            "resolution": "SD"
+        },
+        "source": "BDRip",
+        "encoding": "x264",
+        "group": "BBer"
+    },
+    "Star Wars Episode 4 Un Nouvel espoir 1977 Truefrench BDrip x264-BBer": {
+        "generated": "Star.Wars.Episode.4.Un.Nouvel.Espoir.1977.TRUEFRENCH.BDRip.x264-BBer",
+        "title": "Star Wars Episode 4 Un Nouvel Espoir",
+        "type": "movie",
+        "year": "1977",
+        "language": "TRUEFRENCH",
+        "guess": {
+            "resolution": "SD"
+        },
+        "source": "BDRip",
+        "encoding": "x264",
+        "group": "BBer"
+    },
+    "Star Wars Episode 5 L'Empire contre-attaque 1980 Truefrench BDrip x264-BBer": {
+        "generated": "Star.Wars.Episode.5.L'empire.Contre-attaque.1980.TRUEFRENCH.BDRip.x264-BBer",
+        "title": "Star Wars Episode 5 L'empire Contre-attaque",
+        "type": "movie",
+        "year": "1980",
+        "language": "TRUEFRENCH",
+        "guess": {
+            "resolution": "SD"
+        },
+        "source": "BDRip",
+        "encoding": "x264",
+        "group": "BBer"
+    },
+    "Star Wars Episode 6 Le Retour du Jedi 1983 Truefrench BDrip x264-BBer": {
+        "generated": "Star.Wars.Episode.6.Le.Retour.Du.Jedi.1983.TRUEFRENCH.BDRip.x264-BBer",
+        "title": "Star Wars Episode 6 Le Retour Du Jedi",
+        "type": "movie",
+        "year": "1983",
+        "language": "TRUEFRENCH",
+        "guess": {
+            "resolution": "SD"
+        },
+        "source": "BDRip",
+        "encoding": "x264",
+        "group": "BBer"
+    },
+    "Star.Wars.Episode.I.The.Phantom.Menace.1999.MULTi.1080p.BluRay.x264-LOST": {
+        "generated": "Star.Wars.Episode.I.The.Phantom.Menace.1999.MULTI.1080p.BLURAY.x264-LOST",
+        "title": "Star Wars Episode I The Phantom Menace",
+        "type": "movie",
+        "year": "1999",
+        "language": "MULTI",
+        "resolution": "1080p",
+        "source": "BLURAY",
+        "encoding": "x264",
+        "group": "LOST"
+    },
+    "Tower Heist [1080p] MULTI 2011 BluRay x264-Pop  .Le casse De Central Park.": {
+        "generated": "Tower.Heist.2011.MULTI.1080p.BLURAY.x264-Pop",
+        "title": "Tower Heist",
+        "type": "movie",
+        "year": "2011",
+        "language": "MULTI",
+        "resolution": "1080p",
+        "source": "BLURAY",
+        "encoding": "x264",
+        "group": "Pop"
     }
 }

@@ -26,6 +26,14 @@
 			}
 		}
 
+		public function testGetGeneratedRelease(){
+			foreach($this -> elements as $element){
+				if(isset($element['generated'])){
+					$this -> assertEquals($element['generated'], $element['object'] -> __toString());
+				}
+			}
+		}
+
 		public function testGetYear(){
 			foreach($this -> elements as $element){
 				if(isset($element['year'])){

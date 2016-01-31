@@ -9,6 +9,9 @@
 		const MOVIE = 'movie';
 		const TVSHOW = 'tvshow';
 
+		const ORIGINAL_RELEASE = 1;
+		const GENERATED_RELEASE = 2;
+
 		protected static $sourceStatic = [
 			'DVDRip' => [
 				'dvdrip',
@@ -36,10 +39,6 @@
 				'bdrip',
 				'bd-rip'
 			],
-			'BLURAY' => [
-				'bluray',
-				'blu-ray'
-			],
 			'DVD-R' => [
 				'dvd',
 				'dvd-r'
@@ -47,11 +46,18 @@
 			'R5' => [
 				'r5'
 			],
-			'HDTV' => [
+			'HDRip' => [
 				'hdtv',
 				'hdtvrip',
 				'hdtv-rip',
-				'hdrip'
+				'hdrip',
+				'hdlight',
+				'mhd',
+				'hd'
+			],
+			'BLURAY' => [
+				'bluray',
+				'blu-ray'
 			],
 			'PDTV' => [
 				'pdtv'
@@ -111,7 +117,10 @@
 		];
 
 		protected static $languageStatic = [
-			'FRENCH' => 'FRENCH',
+			'FRENCH' => [
+				'FRENCH',
+				'FR'
+			],
 			'TRUEFRENCH' => 'TRUEFRENCH',
 			'VOSTFR' => 'VOSTFR',
 			'SUBFRENCH' => 'SUBFRENCH',
@@ -204,7 +213,6 @@
 			'3D' => '3D',
 			'HSBS' => 'HSBS',
 			'DOC' => 'DOC',
-			'INT' => 'INT',
 			'RERIP' => [
 				'rerip',
 				're-rip'
@@ -239,12 +247,16 @@
 		protected $episode;
 
 		public function __construct($release){
-
 			$this -> release = $release;
 
-			// Clean
+		// Clean
+			$this -> release = str_replace(['[', ']', '(', ')', ',', ';', ':', '!'], '', $this -> release);
+			$this -> release = preg_replace('#[\s]+#', ' ', $this -> release);
 			$this -> release = str_replace(' ', '.', $this -> release);
 			$this -> title = $this -> release;
+
+			// Positions
+			$this -> positions = explode('.', $this -> release);
 
 			// SOURCE, ENCODING, RESOLUTION, DUB, LANGUAGE (unique)
 			foreach(['source', 'encoding', 'resolution', 'dub', 'language'] as $attribute){
@@ -318,17 +330,65 @@
 
 			// GROUP
 			$this -> title = preg_replace_callback('#\-([a-zA-Z0-9_\.]+)$#', function($matches){
-				$this -> group = $matches[1];
+				if(strlen($matches[1]) > 12){
+					preg_match('#(\w+)#', $matches[1], $matches);
+				}
+				$this -> group = preg_replace('#^\.+|\.+$#', '', $matches[1]);
 				return '';
 			}, $this -> title);
 
+			// Create and clean title by positions
+			$title = [];
+			$this -> title = preg_replace('#\.+#', '.', $this -> title);
+			foreach(array_intersect($this -> positions, explode('.', $this -> title)) as $key => $value){
+				$last = isset($last) ? $last:0;
+
+				if($key - $last > 1){
+					$this -> title = implode(' ', $title);
+					break;
+				}
+
+				$title[] = $value;
+				$this -> title = implode(' ', $title);
+				$last = $key;
+			}
+
 			// TITLE
-			$this -> title = str_replace('.', ' ', $this -> title);
-			$this -> title = preg_replace('#\s+#', ' ', $this -> title);
 			$this -> title = ucwords(strtolower($this -> title));
+			$this -> title = trim($this -> title);
 		}
 
-		public function getRelease(){
+		public function __toString(){
+			$arrays = [];
+			foreach([
+				$this -> getTitle(),
+				$this -> getYear(),
+				($this -> getSeason() ? 'S'.sprintf('%02d', $this -> getSeason()):'').
+				($this -> getEpisode() ? 'E'.sprintf('%02d', $this -> getEpisode()):''),
+				$this -> getLanguage(),
+				$this -> getResolution(),
+				$this -> getSource(),
+				$this -> getEncoding(),
+				$this -> getDub()
+			] as $array){
+				if(is_array($array)){
+					$arrays[] = implode('.', $array);
+				} else if($array){
+					$arrays[] = $array;
+				}
+			}
+			return preg_replace('#\s+#', '.', implode('.', $arrays)).'-'.($this -> getGroup() ? $this -> getGroup():'NOTEAM');
+		}
+
+		public function getRelease($mode = self::ORIGINAL_RELEASE){
+			switch($mode){
+				case self::GENERATED_RELEASE:
+					return $this -> __toString();
+				break;
+				default:
+					return $this -> release;
+				break;
+			}
 			return $this -> release;
 		}
 
