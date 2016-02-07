@@ -965,20 +965,6 @@
         "encoding": "XviD",
         "group": "FwD"
     },
-    "La.French.2014.FRENCH.BRRip.x264.AC3-DesTroY": {
-        "generated": "Laench.2014.FRENCH.BRRip.x264.AC3-DesTroY",
-        "title": "Laench",
-        "type": "movie",
-        "year": "2014",
-        "language": "FRENCH",
-        "guess": {
-            "resolution": "SD"
-        },
-        "source": "BRRip",
-        "dub": "AC3",
-        "encoding": "x264",
-        "group": "DesTroY"
-    },
     "The Ten 2011 TRUEFRENCH SUBFORCED DVDRIP XVID-FwD": {
         "generated": "The.Ten.2011.TRUEFRENCH.DVDRip.XviD-FwD",
         "title": "The Ten",
@@ -1204,11 +1190,11 @@
         "episode": 1
     },
     "Veronica Mars 2014 TRUEFRENCH BDRip XviD AC3-FrIeNdS": {
-        "generated": "Veronica.Mars.2014.FRENCH.BDRip.XviD.AC3-NOTEAM",
+        "generated": "Veronica.Mars.2014.TRUEFRENCH.BDRip.XviD.AC3-FrIeNdS",
         "title": "Veronica Mars",
         "type": "movie",
         "year": "2014",
-        "language": "FRENCH",
+        "language": "TRUEFRENCH",
         "guess": {
             "resolution": "SD"
         },
@@ -1615,5 +1601,28 @@
         "source": "BLURAY",
         "encoding": "x264",
         "group": "Pop"
+    },
+    "Elektra 2005 [J.Garner, T.Stamp] BRRIP-H264-720P & AC3-5.1-VFF-STFR [Calinos1]": {
+      "generated": "Elektra.2005.MULTI.720p.BRRip.h264.AC3-NOTEAM",
+      "title": "Elektra",
+      "type": "movie",
+      "year": "2005",
+      "language": "MULTI",
+      "resolution": "720p",
+      "source": "BRRip",
+      "encoding": "h264",
+      "flags": [
+          "DD5.1"
+      ]
+    },
+    "Scary Movie 1 (2000) - 1080p FR EN x264 ac3 mHDgz": {
+      "generated": "Scary.Movie.1.2000.MULTI.1080p.HDRip.x264.AC3-gz",
+      "title": "Scary Movie 1",
+      "type": "movie",
+      "year": "2000",
+      "language": "MULTI",
+      "resolution": "1080p",
+      "source": "HDRip",
+      "encoding": "x264"
     }
 }

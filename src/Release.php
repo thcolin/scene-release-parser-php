@@ -119,11 +119,19 @@
 		protected static $languageStatic = [
 			'FRENCH' => [
 				'FRENCH',
+				'Français',
+				'Francais',
 				'FR'
 			],
-			'TRUEFRENCH' => 'TRUEFRENCH',
-			'VOSTFR' => 'VOSTFR',
-			'SUBFRENCH' => 'SUBFRENCH',
+			'TRUEFRENCH' => [
+				'TRUEFRENCH',
+				'VFF'
+			],
+			'VFQ' => 'VFQ',
+			'VOSTFR' => [
+				'STFR',
+				'VOSTFR',
+			],
 			'PERSIAN' => 'PERSIAN',
 			'AMHARIC' => 'AMHARIC',
 			'ARABIC' => 'ARABIC',
@@ -132,7 +140,11 @@
 			'CREOLE' => 'CREOLE',
 			'DANISH' => 'DANISH',
 			'DUTCH' => 'DUTCH',
-			'ENGLISH' => 'ENGLISH',
+			'ENGLISH' => [
+				'ENGLISH',
+				'EN',
+				'VOA'
+			],
 			'ESTONIAN' => 'ESTONIAN',
 			'FILIPINO' => 'FILIPINO',
 			'FINNISH' => 'FINNISH',
@@ -175,6 +187,7 @@
 			'PROPER' => 'PROPER',
 			'FASTSUB' => 'FASTSUB',
 			'LIMITED' => 'LIMITED',
+			'SUBFRENCH' => 'SUBFRENCH',
 			'SUBFORCED' => 'SUBFORCED',
 			'LIMITED' => 'LIMITED',
 			'EXTENDED' => 'EXTENDED',
@@ -247,10 +260,10 @@
 		protected $episode;
 
 		public function __construct($release){
-			$this -> release = $release;
+			$this -> original = $release;
 
-		// Clean
-			$this -> release = str_replace(['[', ']', '(', ')', ',', ';', ':', '!'], '', $this -> release);
+			// Clean
+			$this -> release = str_replace(['[', ']', '(', ')', ',', ';', ':', '!'], '.', $this -> original);
 			$this -> release = preg_replace('#[\s]+#', ' ', $this -> release);
 			$this -> release = str_replace(' ', '.', $this -> release);
 			$this -> title = $this -> release;
@@ -258,8 +271,31 @@
 			// Positions
 			$this -> positions = explode('.', $this -> release);
 
+			// LANGUAGE
+			$languages = [];
+
+			foreach(Release::$languageStatic as $langue => $patterns){
+				if(!is_array($patterns)){
+					$patterns = [$patterns];
+				}
+
+				foreach($patterns as $pattern){
+					$this -> title = preg_replace('#[\.|\-]'.preg_quote($pattern).'([\.|\-| ])#i', '$1', $this -> title, 1, $replacements);
+					if($replacements > 0){
+						$languages[] = $langue;
+						break;
+					}
+				}
+			}
+
+			if(count($languages) == 1){
+				$this -> language = $languages[0];
+			} else if(count($languages) > 1){
+				$this -> language = 'MULTI';
+			}
+
 			// SOURCE, ENCODING, RESOLUTION, DUB, LANGUAGE (unique)
-			foreach(['source', 'encoding', 'resolution', 'dub', 'language'] as $attribute){
+			foreach(['source', 'encoding', 'resolution', 'dub'] as $attribute){
 				$attributes = $attribute.'Static';
 
 				foreach(Release::$$attributes as $key => $patterns){
