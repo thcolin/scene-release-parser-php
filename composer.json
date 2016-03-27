@@ -12,5 +12,8 @@
 	    "psr-4": {
 		    "thcolin\\SceneReleaseParser\\": "src/"
 	    }
+    },
+    "require": {
+        "mhor/php-mediainfo": "~1.6"
     }
 }
