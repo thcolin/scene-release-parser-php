@@ -14,6 +14,6 @@
 	    }
     },
     "require": {
-        "mhor/php-mediainfo": "~1.6"
+        "mhor/php-mediainfo": "~2.1"
     }
 }
