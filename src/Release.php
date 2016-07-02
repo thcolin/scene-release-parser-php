@@ -474,6 +474,7 @@
 
 		private function parseTitle(&$title){
 			$array = [];
+      $return = '';
 			$title = preg_replace('#\.+#', '.', $title);
 			$positions = explode('.', $this -> release);
 
