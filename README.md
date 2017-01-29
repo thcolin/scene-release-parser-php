@@ -50,6 +50,9 @@ echo($Release -> getGroup()); // ARK01
 // FLAGS
 print_r($Release -> getFlags()); // [PROPER, DD5.1]
 
+// SCORE
+echo($Release -> getScore()); // 7 (bigger is better, max : 7)
+
 // ONLY TVSHOW
 echo($Release -> getSeason()); // 1
 echo($Release -> getEpisode()); // 5

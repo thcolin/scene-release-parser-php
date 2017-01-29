@@ -287,17 +287,17 @@
     protected $release = null;
     protected $type = null;
     protected $title = null;
-    protected $year = null;
+    protected $year = 0;
     protected $language = null;
     protected $resolution = null;
     protected $source = null;
     protected $dub = null;
     protected $encoding = null;
     protected $group = null;
-    protected $flags = null;
+    protected $flags = [];
 
-    protected $season = null;
-    protected $episode = null;
+    protected $season = 0;
+    protected $episode = 0;
 
     public function __construct($name){
       // CLEAN
@@ -684,6 +684,20 @@
 
     public function setFlags($flags){
       $this -> flags = (is_array($flags) ? $flags:[$flags]);
+    }
+
+    public function getScore(){
+      $score = 0;
+      
+      $score += ($this -> getTitle() ? 1:0);
+      $score += ($this -> getYear() ? 1:0);
+      $score += ($this -> getLanguage() ? 1:0);
+      $score += ($this -> getResolution() ? 1:0);
+      $score += ($this -> getSource() ? 1:0);
+      $score += ($this -> getEncoding() ? 1:0);
+      $score += ($this -> getDub() ? 1:0);
+
+      return $score;
     }
 
   }
