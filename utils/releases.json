@@ -1624,5 +1624,36 @@
       "resolution": "1080p",
       "source": "HDRip",
       "encoding": "x264"
+    },
+    "Kiss the blood off my hands - (Norman FOSTER) - 1948 - VOSTFR - Dvdrip-x264 - kerfiche": {
+      "generated": "Kiss.The.Blood.Off.My.Hands.1948.VOSTFR.DVDRip.x264-kerfiche",
+      "title": "Kiss The Blood Off My Hands",
+      "type": "movie",
+      "year": "1948",
+      "language": "VOSTFR",
+      "source": "DVDRip",
+      "encoding": "x264"
+    },
+    "Faster, Pussycat ! Kill ! Kill !. 1965.Russ Meyer.VOSTFR.Blu-Ray 720p.Liosaa (RU) / Popo": {
+      "generated": "Faster.Pussycat.Kill.Kill.1965.VOSTFR.720p.BLURAY-NOTEAM",
+      "title": "Faster Pussycat Kill Kill",
+      "type": "movie",
+      "year": "1965",
+      "language": "VOSTFR",
+      "resolution": "720p",
+      "source": "BLURAY"
+    },
+    "Street Fighter L'ultime combat - 1994 - Remux Blu-Ray 1080p Truefrench Vincentimes": {
+      "generated": "Street.Fighter.L'ultime.Combat.1994.TRUEFRENCH.1080p.BLURAY-Vincentimes",
+      "title": "Street Fighter L'ultime Combat",
+      "type": "movie",
+      "year": "1994",
+      "language": "TRUEFRENCH",
+      "resolution": "1080p",
+      "source": "BLURAY",
+      "group": "Vincentimes",
+      "flags": [
+          "REMUX"
+      ]
     }
 }
