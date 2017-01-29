@@ -89,3 +89,7 @@ echo($Release -> getLanguage()); // FRENCH (default)
 
 ## Tests
 Use PHPUnit, there is a script to generate the json data for the tests in the folder ```/utils```, it will take the release names from the ```releases.txt``` file in the same folder. Use it to generate the data needed for the tests, but before testing, make sure all the datas generated are valid, if not this would be useless.
+
+## TODO
+* Merge [thcolin\scene-release-rename](https://github.com/thcolin/scene-release-renamer) with this repo (create a bin folder for it)
+* Add an ```quality``` attribute to ```Release``` class calculated from numbers of attributes available
