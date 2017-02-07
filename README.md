@@ -1,5 +1,9 @@
 # Scene Release Parser
 
+[![Build Status](https://travis-ci.org/thcolin/scene-release-parser.svg?branch=master)](https://travis-ci.org/thcolin/scene-release-parser)
+[![Code Climate](https://codeclimate.com/github/thcolin/scene-release-parser/badges/gpa.svg)](https://codeclimate.com/github/thcolin/scene-release-parser)
+[![Test Coverage](https://codeclimate.com/github/thcolin/scene-release-parser/badges/coverage.svg)](https://codeclimate.com/github/thcolin/scene-release-parser/coverage)
+
 PHP Library to parse scene release names to get their tags and title (original from [majestixx/scene-release-parser-php-lib](https://github.com/majestixx/scene-release-parser-php-lib)).
 
 The library contains one classe, **thcolin\SceneReleaseParser\Release**, the constructor will try to extract all the tags from the Release name and creates an object with easy access to all information, remaining parts will construct the title of the media (movie or tv show).
