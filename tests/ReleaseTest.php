@@ -131,7 +131,7 @@
       }
     }
 
-    public function testGuess(){
+    public function testUnitGuess(){
       foreach($this -> elements as $element){
         if(isset($element['guess'])){
           foreach($element['guess'] as $guess => $value){
@@ -144,6 +144,42 @@
               break;
               case 'resolution':
                 $this -> assertEquals($value, $element['object'] -> guessResolution(), json_encode($element));
+              break;
+            }
+          }
+        }
+      }
+    }
+
+    public function testGlobalGuess(){
+      foreach($this -> elements as $element){
+        if(isset($element['guess'])){
+          foreach($element['guess'] as $guess => $value){
+            switch($guess){
+              case 'year':
+                $this -> assertEquals(null, $element['object'] -> getYear(), json_encode($element));
+              break;
+              case 'language':
+                $this -> assertEquals(null, $element['object'] -> getLanguage(), json_encode($element));
+              break;
+              case 'resolution':
+                $this -> assertEquals(null, $element['object'] -> getResolution(), json_encode($element));
+              break;
+            }
+          }
+
+          $element['object']->guess();
+
+          foreach($element['guess'] as $guess => $value){
+            switch($guess){
+              case 'year':
+                $this -> assertEquals(date('Y'), $element['object'] -> getYear(), json_encode($element));
+              break;
+              case 'language':
+                $this -> assertEquals($value, $element['object'] -> getLanguage(), json_encode($element));
+              break;
+              case 'resolution':
+                $this -> assertEquals($value, $element['object'] -> getResolution(), json_encode($element));
               break;
             }
           }
