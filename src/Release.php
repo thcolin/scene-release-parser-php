@@ -3,7 +3,6 @@
   namespace thcolin\SceneReleaseParser;
 
   use InvalidArgumentException;
-  use Exception;
 
   class Release{
 
@@ -379,7 +378,6 @@
           return $this -> release;
         break;
       }
-      return $this -> release;
     }
 
     private function clean($name){
@@ -455,7 +453,7 @@
           !isset($this -> dub) &&
           !isset($this -> encoding)
         ){
-          throw new Exception('This is not a correct Scene Release name');
+          throw new InvalidArgumentException('This is not a correct Scene Release name');
         }
 
         // movie
@@ -688,7 +686,7 @@
 
     public function getScore(){
       $score = 0;
-      
+
       $score += ($this -> getTitle() ? 1:0);
       $score += ($this -> getYear() ? 1:0);
       $score += ($this -> getLanguage() ? 1:0);
