@@ -16,6 +16,7 @@
     $Release = new Release($release);
 
     $element = [
+      'original' => $Release -> getRelease(),
       'generated' => $Release -> __toString(),
       'title' => utf8_encode($Release -> getTitle()),
       'type' => utf8_encode($Release -> getType())

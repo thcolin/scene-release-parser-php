@@ -29,7 +29,16 @@
     public function testGetGeneratedRelease(){
       foreach($this -> elements as $element){
         if(isset($element['generated'])){
+          $this -> assertEquals($element['generated'], $element['object'] -> getRelease(Release::GENERATED_RELEASE), json_encode($element));
           $this -> assertEquals($element['generated'], $element['object'] -> __toString(), json_encode($element));
+        }
+      }
+    }
+
+    public function testGetOriginalRelease(){
+      foreach($this -> elements as $element){
+        if(isset($element['generated'])){
+          $this -> assertEquals($element['original'], $element['object'] -> getRelease(), json_encode($element));
         }
       }
     }
@@ -140,6 +149,11 @@
           }
         }
       }
+    }
+
+    public function testConstructFail(){
+      $this->setExpectedException('InvalidArgumentException');
+      $release = new Release('This is not a good scene release name');
     }
 
   }
