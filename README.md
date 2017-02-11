@@ -94,9 +94,32 @@ echo($Release -> getEncoding()); // x264
 echo($Release -> getLanguage()); // FRENCH (default)
 ```
 
+## Bin
+Inside of `bin` folder, you got a `scene-release-renamer` executable to rename video file with approximately good scene release name.
+
+### How to use
+Rename all the video files (avi, mp4, mkv) of the path :
+```
+php bin/scene-release-renamer <path>
+```
+
+### Exemple :
+| Original | Generated |
+| -------- | --------- |
+| Benjamin Button [x264] [HD 720p] [LUCN] [FR].mp4 | Benjamin.Button.FRENCH.720p.HDRip.x264-NOTEAM.mp4 |
+| Jamais entre amis (2015) [1080p] MULTI (VFQ-VOA) Bluray x264 AC3-PopHD (Sleeping with Other People).mkv | Jamais.Entre.Amis.2015.MULTI.1080p.BLURAY.x264.AC3-PopHD.mkv |
+| La Vie rêvée de Walter Mitty [1080p] MULTi 2013 BluRay x264-Pop (The Secret Life Of Walter Mitty) .mkv | La.Vie.Re?ve?e.De.Walter.Mitty.2013.MULTI.1080p.BLURAY.x264-Pop.mkv |
+| Le Nouveau Stagiaire (2015) The Intern - Multi 1080p - x264 AAC 5.1 - CCATS.mkv | Le.Nouveau.Stagiaire.2015.MULTI.1080p.x264-CCATS.mkv |
+| Le prestige (2006) (The Prestige) 720p x264 AAC 5.1 MULTI [NOEX].mkv | Le.Prestige.2006.MULTI.720p.x264-NOTEAM.mkv |
+| Les 4 Fantastiques 2015 Truefrench 720p x264 AAC PIXEL.mp4 | Les.4.Fantastiques.2015.TRUEFRENCH.720p.x264-NOTEAM.mp4 |
+| One.For.the.Money.2012.1080p.HDrip.French.x264 (by kimo).mkv | One.For.The.Money.2012.FRENCH.1080p.HDRip.x264-NOTEAM.mkv |
+| Tower Heist [1080p] MULTI 2011 BluRay x264-Pop  .Le casse De Central Park. .mkv | Tower.Heist.2011.MULTI.1080p.BLURAY.x264-Pop.mkv |
+
+## ToDo :
+- Use ``mediainfo`` to get unknown informations ([thcolin/scene-release-parser](https://github.com/thcolin/scene-release-parser))
+
 ## Tests
 Use PHPUnit, there is a script to generate the json data for the tests in the folder ```/utils```, it will take the release names from the ```releases.txt``` file in the same folder. Use it to generate the data needed for the tests, but before testing, make sure all the datas generated are valid, if not this would be useless.
 
 ## TODO
-* Merge [thcolin\scene-release-rename](https://github.com/thcolin/scene-release-renamer) with this repo (create a bin folder for it)
-* Add an ```quality``` attribute to ```Release``` class calculated from numbers of attributes available
+* Up to date !

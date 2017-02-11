@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+
+  require dirname(__DIR__).'/vendor/autoload.php';
+
+  use thcolin\SceneReleaseParser\Renamer;
+
+  $console = new Renamer();
+  $console -> run();
+
+?>
