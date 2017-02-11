@@ -114,6 +114,14 @@
       }
     }
 
+    public function testGetScore(){
+      foreach($this -> elements as $element){
+        if(isset($element['score'])){
+          $this -> assertEquals($element['score'], $element['object'] -> getScore(), json_encode($element));
+        }
+      }
+    }
+
     public function testGuess(){
       foreach($this -> elements as $element){
         if(isset($element['guess'])){
