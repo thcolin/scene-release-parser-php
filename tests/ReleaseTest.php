@@ -5,10 +5,9 @@
   class ReleaseTest extends PHPUnit_Framework_TestCase{
 
     public static function setUpBeforeClass(){
-      // installed on macOS with brew
-      // TODO : discover env and configure it in terms
-      // TODO : configure travis-ci to download this dependencie
-      define('__MEDIAINFO_BIN__', '/usr/local/bin/mediainfo');
+      if(PHP_OS === 'Darwin'){
+        define('__MEDIAINFO_BIN__', '/usr/local/bin/mediainfo');
+      }
     }
 
     public function setUp(){
@@ -67,9 +66,13 @@
           file_put_contents(__DIR__.'/../utils/'.$basename, fopen($url, 'r'));
         }
 
-        $release = Release::analyse(__DIR__.'/../utils/'.$basename, [
-          'command' => __MEDIAINFO_BIN__
-        ]);
+        $config = [];
+
+        if(defined('__MEDIAINFO_BIN__')){
+          $config['command'] = __MEDIAINFO_BIN__;
+        }
+        
+        $release = Release::analyse(__DIR__.'/../utils/'.$basename, $config);
 
         $this -> assertEquals($element['encoding'], $release -> getEncoding(), $url);
         $this -> assertEquals($element['resolution'], $release -> getResolution(), $url);
