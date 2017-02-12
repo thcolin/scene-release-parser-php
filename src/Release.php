@@ -435,6 +435,9 @@
               break;
             }
           }
+
+          // for debug only
+          print_r($video);
         }
 
         // RESOLUTION
