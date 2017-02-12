@@ -436,8 +436,14 @@
             }
           }
 
-          // for debug only
-          print_r($video);
+          if($codec = $video -> get('writing_library_name')){
+            switch($codec){
+              case 'DivX':
+                $release -> setEncoding(Release::ENCODING_DIVX);
+                continue;
+              break;
+            }
+          }
         }
 
         // RESOLUTION
