@@ -2,10 +2,10 @@
 
   namespace thcolin\SceneReleaseParser;
 
-  use Symfony\Component\Console\Application as Console;
+  use Symfony\Component\Console\Application as SymfonyConsole;
   use Symfony\Component\Console\Input\InputInterface;
 
-  class Renamer extends Console{
+  class Console extends SymfonyConsole{
 
       protected function getCommandName(InputInterface $input){
         return 'renamer';

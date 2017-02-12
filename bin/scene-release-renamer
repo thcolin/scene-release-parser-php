@@ -3,9 +3,9 @@
 
   require dirname(__DIR__).'/vendor/autoload.php';
 
-  use thcolin\SceneReleaseParser\Renamer;
+  use thcolin\SceneReleaseParser\Console;
 
-  $console = new Renamer();
+  $console = new Console();
   $console -> run();
 
 ?>
