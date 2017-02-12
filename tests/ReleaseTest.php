@@ -37,7 +37,7 @@
           'resolution' => Release::RESOLUTION_1080P,
           'language' => 'GERMAN'
         ],
-        'https://samples.mplayerhq.hu/V-codecs/DX50-DivX5/cats.avi' => [
+        'https://cinelerra-cv.org/footage/rassegna2.avi' => [
           'encoding' => Release::ENCODING_DIVX,
           'resolution' => Release::RESOLUTION_SD,
           'language' => 'VO'
@@ -71,7 +71,7 @@
         if(defined('__MEDIAINFO_BIN__')){
           $config['command'] = __MEDIAINFO_BIN__;
         }
-        
+
         $release = Release::analyse(__DIR__.'/../utils/'.$basename, $config);
 
         $this -> assertEquals($element['encoding'], $release -> getEncoding(), $url);
