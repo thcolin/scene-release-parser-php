@@ -358,8 +358,8 @@
         $this -> getYear(),
         ($this -> getSeason() ? 'S'.sprintf('%02d', $this -> getSeason()):'').
         ($this -> getEpisode() ? 'E'.sprintf('%02d', $this -> getEpisode()):''),
-        $this -> getLanguage(),
-        $this -> getResolution(),
+        ($this -> getLanguage() !== Release::LANGUAGE_DEFAULT ? $this -> getLanguage():''),
+        ($this -> getResolution() !== Release::RESOLUTION_SD ? $this -> getResolution():''),
         $this -> getSource(),
         $this -> getEncoding(),
         $this -> getDub()
@@ -390,9 +390,6 @@
       // RELEASE
       $basename = pathinfo($path, PATHINFO_FILENAME);
       $release = new Release($basename, false);
-      $release -> setEncoding(null);
-      $release -> setResolution(null);
-      $release -> setLanguage(null);
 
       foreach($container -> getVideos() as $video){
         // CODEC
@@ -476,21 +473,18 @@
       // LANGUAGE
       $audios = $container -> getAudios();
 
-      if(!$release -> getLanguage()){
-        if(count($audios) > 1){
-          $release -> setLanguage(Release::LANGUAGE_MULTI);
-        } else if(count($audios) > 0){
-          $languages = $audios[0] -> get('language');
-          if($languages){
-            $release -> setLanguage(strtoupper($languages[1]));
-          } else{
-            // default : ENGLISH
-            $release -> setLanguage(Release::LANGUAGE_DEFAULT);
-          }
-        } else{
-          // default : ENGLISH
-          $release -> setLanguage(Release::LANGUAGE_DEFAULT);
+      if(count($audios) > 1){
+        $release -> setLanguage(Release::LANGUAGE_MULTI);
+      } else if(count($audios) > 0){
+        $languages = $audios[0] -> get('language');
+        if($languages){
+          $release -> setLanguage(strtoupper($languages[1]));
         }
+      }
+
+      if(!$release -> getLanguage()){
+        // default : ENGLISH
+        $release -> setLanguage(Release::LANGUAGE_DEFAULT);
       }
 
       return $release;
