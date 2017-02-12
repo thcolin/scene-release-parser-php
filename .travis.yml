@@ -3,15 +3,17 @@ language: php
 php:
   - '5.6'
 
-before_install:
-  - sudo apt-get install -y mediainfo
-
 install:
   - composer install
 
 addons:
-    code_climate:
-        repo_token: 8023799c9911249afedc10382b471e6559183b03eaa4d560fc7bc13317945e30
+  code_climate:
+    repo_token: 8023799c9911249afedc10382b471e6559183b03eaa4d560fc7bc13317945e30
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - mediainfo
 
 after_success:
   - vendor/bin/test-reporter
