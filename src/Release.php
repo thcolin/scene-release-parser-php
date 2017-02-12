@@ -413,33 +413,45 @@
           }
         }
 
+        if($codec = $video -> get('writing_library_name')){
+          switch($codec){
+            case 'DivX':
+              $release -> setEncoding(Release::ENCODING_DIVX);
+              continue;
+            break;
+            case 'x264':
+              $release -> setEncoding(Release::ENCODING_X264);
+              continue;
+            break;
+            case 'x265':
+              $release -> setEncoding(Release::ENCODING_X265);
+              continue;
+            break;
+          }
+        }
+
+        if($codec = $video -> get('codec_cc')){
+          switch($codec){
+            case 'DIVX':
+              $release -> setEncoding(Release::ENCODING_DIVX);
+              continue;
+            break;
+            case 'XVID':
+              $release -> setEncoding(Release::ENCODING_XVID);
+              continue;
+            break;
+            case 'hvc1':
+              $release -> setEncoding(Release::ENCODING_X265);
+              continue;
+            break;
+          }
+        }
+
         if(!$release -> getEncoding()){
           if($codec = $video -> get('internet_media_type')){
             switch($codec){
               case 'video/H264':
                 $release -> setEncoding(Release::ENCODING_H264);
-                continue;
-              break;
-            }
-          }
-
-          if($codec = $video -> get('codec_cc')){
-            switch($codec){
-              case 'DIVX':
-                $release -> setEncoding(Release::ENCODING_DIVX);
-                continue;
-              break;
-              case 'XVID':
-                $release -> setEncoding(Release::ENCODING_XVID);
-                continue;
-              break;
-            }
-          }
-
-          if($codec = $video -> get('writing_library_name')){
-            switch($codec){
-              case 'DivX':
-                $release -> setEncoding(Release::ENCODING_DIVX);
                 continue;
               break;
             }
