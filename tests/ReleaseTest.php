@@ -47,9 +47,9 @@
           'resolution' => Release::RESOLUTION_SD,
           'language' => 'VO'
         ],
-        'https://s3.amazonaws.com/x265.org/video/Tears_400_x264.mp4' => [
+        'http://samples.mplayerhq.hu/Matroska/x264_no-b-frames.mkv' => [
           'encoding' => Release::ENCODING_X264,
-          'resolution' => Release::RESOLUTION_1080P,
+          'resolution' => Release::RESOLUTION_720P,
           'language' => 'VO'
         ],
         'https://s3.amazonaws.com/x265.org/video/Tears_400_x265.mp4' => [
