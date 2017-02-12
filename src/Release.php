@@ -2,6 +2,7 @@
 
   namespace thcolin\SceneReleaseParser;
 
+  use Mhor\MediaInfo\MediaInfo;
   use InvalidArgumentException;
 
   class Release{
@@ -284,6 +285,7 @@
     ];
 
     protected $release = null;
+    protected $strict = true;
     protected $type = null;
     protected $title = null;
     protected $year = 0;
@@ -298,7 +300,9 @@
     protected $season = 0;
     protected $episode = 0;
 
-    public function __construct($name){
+    public function __construct($name, $strict = true){
+      $this -> strict = $strict;
+
       // CLEAN
       $cleaned = $this -> clean($name);
 
@@ -367,6 +371,108 @@
         }
       }
       return preg_replace('#\s+#', '.', implode('.', $arrays)).'-'.($this -> getGroup() ? $this -> getGroup():'NOTEAM');
+    }
+
+    public static function analyse($path, $config = []){
+      if(!is_file($path)){
+        throw new InvalidArgumentException("File '".$path."' not found");
+      }
+
+      // MEDIAINFO
+      $mediainfo = new MediaInfo();
+
+      foreach($config as $key => $value){
+        $mediainfo -> setConfig($key, $value);
+      }
+
+      $container = $mediainfo -> getInfo($path);
+
+      // RELEASE
+      $basename = pathinfo($path, PATHINFO_FILENAME);
+      $release = new Release($basename, false);
+      $release -> setEncoding(null);
+      $release -> setResolution(null);
+      $release -> setLanguage(null);
+
+      foreach($container -> getVideos() as $video){
+        // CODEC
+        if(!$release -> getEncoding()){
+          if($codec = $video -> get('internet_media_type')){
+            switch($codec){
+              case 'video/H264':
+                $release -> setEncoding(Release::ENCODING_H264);
+                continue;
+              break;
+            }
+          }
+
+          if($codec = $video -> get('codec_cc')){
+            switch($codec){
+              case 'DIVX':
+                $release -> setEncoding(Release::ENCODING_DIVX);
+                continue;
+              break;
+              case 'XVID':
+                $release -> setEncoding(Release::ENCODING_XVID);
+                continue;
+              break;
+            }
+          }
+
+          if($codec = $video -> get('encoded_library_name')){
+            switch($codec){
+              case 'DivX':
+                $release -> setEncoding(Release::ENCODING_DIVX);
+                continue;
+              break;
+              case 'x264':
+                $release -> setEncoding(Release::ENCODING_X264);
+                continue;
+              break;
+              case 'x265':
+                $release -> setEncoding(Release::ENCODING_X265);
+                continue;
+              break;
+            }
+          }
+        }
+
+        // RESOLUTION
+        if(!$release -> getResolution()){
+          $height = $video -> get('height') -> getAbsoluteValue();
+          $width = $video -> get('width') -> getAbsoluteValue();
+
+          if($height >= 1000 || $width >= 1900){
+            $release -> setResolution(Release::RESOLUTION_1080P);
+          } else if($height >= 700 || $width >= 1200){
+            $release -> setResolution(Release::RESOLUTION_720P);
+          } else{
+            $release -> setResolution(Release::RESOLUTION_SD);
+          }
+        }
+      }
+
+      // LANGUAGE
+      $audios = $container -> getAudios();
+
+      if(!$release -> getLanguage()){
+        if(count($audios) > 1){
+          $release -> setLanguage(Release::LANGUAGE_MULTI);
+        } else if(count($audios) > 0){
+          $languages = $audios[0] -> get('language');
+          if($languages){
+            $release -> setLanguage(strtoupper($languages[1]));
+          } else{
+            // default : ENGLISH
+            $release -> setLanguage(Release::LANGUAGE_DEFAULT);
+          }
+        } else{
+          // default : ENGLISH
+          $release -> setLanguage(Release::LANGUAGE_DEFAULT);
+        }
+      }
+
+      return $release;
     }
 
     public function getRelease($mode = self::ORIGINAL_RELEASE){
@@ -448,6 +554,7 @@
       if($count == 0){
         // Not a Release
         if(
+          $this -> strict &&
           !isset($this -> resolution) &&
           !isset($this -> source) &&
           !isset($this -> dub) &&

@@ -124,9 +124,8 @@ Use PHPUnit, there is a script to generate the json data for the tests in the fo
 
 ## TODO
 * Refacto `README`
-* Review (before possible refacto) `Parser` class
 * Add tests on `Renamer`, `Command/RenamerCommand` and `bin/scene-release-renamer`
-* Check if by default the `Release` class `guess()` unknowns informations when `__toString` is called
+* Check if by default the `Release` class use `guess()` when `__toString` is called if some informations are missing
   * And use `mediainfo` to get unknowns informations
 * Refacto `Command/RenamerCommand` :
   * Use current path by default
