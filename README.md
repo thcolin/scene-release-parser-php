@@ -115,11 +115,24 @@ php bin/scene-release-renamer <path>
 | One.For.the.Money.2012.1080p.HDrip.French.x264 (by kimo).mkv | One.For.The.Money.2012.FRENCH.1080p.HDRip.x264-NOTEAM.mkv |
 | Tower Heist [1080p] MULTI 2011 BluRay x264-Pop  .Le casse De Central Park. .mkv | Tower.Heist.2011.MULTI.1080p.BLURAY.x264-Pop.mkv |
 
-## ToDo :
-- Use ``mediainfo`` to get unknown informations ([thcolin/scene-release-parser](https://github.com/thcolin/scene-release-parser))
-
 ## Tests
 Use PHPUnit, there is a script to generate the json data for the tests in the folder ```/utils```, it will take the release names from the ```releases.txt``` file in the same folder. Use it to generate the data needed for the tests, but before testing, make sure all the datas generated are valid, if not this would be useless.
 
+## Bugs
+* The Shawshank Redemption (1994) MULTi (VFQ-VO-VFF) 1080p BluRay x264-PopHD  (Les Évadés) - The.Shawshank.1994.MULTI.1080p.BLURAY.x264-NOTEAM
+* La ligne Verte (1999) MULTi-VF2 [1080p] BluRay x264-PopHD (The Green Mile) - La.Ligne.1999.MULTI.1080p.BLURAY.x264-PopHD
+
 ## TODO
-* Up to date !
+* Refacto `README`
+* Review (before possible refacto) `Parser` class
+* Add tests on `Renamer`, `Command/RenamerCommand` and `bin/scene-release-renamer`
+* Check if by default the `Release` class `guess()` unknowns informations when `__toString` is called
+  * And use `mediainfo` to get unknowns informations
+* Refacto `Command/RenamerCommand` :
+  * Use current path by default
+  * By default, ask the user if he want rename each file
+    * Enable/Disable with an option (like `--skip-X`)
+    * Allow the user to change `Release` informations
+  * Display a message and don't throw an exception at the end
+* Resolve CodeCoverage issues
+<!-- * Up to date ! -->
