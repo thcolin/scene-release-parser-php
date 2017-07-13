@@ -752,6 +752,8 @@
     public function guessResolution(){
       if($this -> resolution){
         return $this -> resolution;
+      } else if($this->getSource() == self::SOURCE_BLURAY || $this->getSource() == self::SOURCE_BDSCR){
+        return self::RESOLUTION_1080P;
       } else if(isset($this -> defaults['resolution'])){
         return $this -> defaults['resolution'];
       } else {
