@@ -16,8 +16,8 @@
     const SOURCE = 'source';
     const SOURCE_DVDRIP = 'DVDRip';
     const SOURCE_DVDSCR = 'DVDScr';
+    const SOURCE_BDSCR  = 'BDScr';
     const SOURCE_WEB_DL = 'WEB-DL';
-    const SOURCE_BRRIP = 'BRRip';
     const SOURCE_BDRIP = 'BDRip';
     const SOURCE_DVD_R = 'DVD-R';
     const SOURCE_R5 = 'R5';
@@ -25,6 +25,8 @@
     const SOURCE_BLURAY = 'BLURAY';
     const SOURCE_PDTV = 'PDTV';
     const SOURCE_SDTV = 'SDTV';
+    const SOURCE_CAM = 'CAM';
+    const SOURCE_TC = 'TC';
 
     const ENCODING = 'encoding';
     const ENCODING_XVID = 'XviD';
@@ -48,6 +50,18 @@
     const LANGUAGE_DEFAULT = 'VO';
 
     public static $sourceStatic = [
+      self::SOURCE_CAM => [
+        'cam',
+        'camrip',
+        'cam-rip',
+        'ts',
+        'telesync',
+        'pdvd'
+      ],
+      self::SOURCE_TC => [
+        'tc',
+        'telecine'
+      ],
       self::SOURCE_DVDRIP => [
         'dvdrip',
         'dvd-rip'
@@ -55,7 +69,14 @@
       self::SOURCE_DVDSCR => [
         'dvdscr',
         'dvd-scr',
-        'dvdscreener'
+        'dvdscreener',
+        'screener',
+        'scr',
+        'DDC'
+      ],
+      self::SOURCE_BDSCR => [
+        'bluray-scr',
+        'bdscr'
       ],
       self::SOURCE_WEB_DL => [
         'webtv',
@@ -63,20 +84,23 @@
         'webdl',
         'web-dl',
         'webrip',
+        'web-rip',
         'webhd',
         'web'
       ],
-      self::SOURCE_BRRIP => [
+      self::SOURCE_BDRIP => [
+        'bdrip',
+        'bd-rip',
         'brrip',
         'br-rip'
       ],
-      self::SOURCE_BDRIP => [
-        'bdrip',
-        'bd-rip'
-      ],
       self::SOURCE_DVD_R => [
         'dvd',
-        'dvd-r'
+        'dvdr',
+        'dvd-r',
+        'dvd-5',
+        'dvd-9',
+        'r6-dvd'
       ],
       self::SOURCE_R5 => [
         'r5'
@@ -92,13 +116,19 @@
       ],
       self::SOURCE_BLURAY => [
         'bluray',
-        'blu-ray'
+        'blu-ray',
+        'bdr'
       ],
       self::SOURCE_PDTV => [
         'pdtv'
       ],
       self::SOURCE_SDTV => [
-        'sdtv'
+        'sdtv',
+        'dsr',
+        'dsrip',
+        'satrip',
+        'dthrip',
+        'dvbrip'
       ]
     ];
 
@@ -228,21 +258,23 @@
       'LIMITED' => 'LIMITED',
       'SUBFRENCH' => 'SUBFRENCH',
       'SUBFORCED' => 'SUBFORCED',
-      'LIMITED' => 'LIMITED',
       'EXTENDED' => 'EXTENDED',
       'THEATRICAL' => 'THEATRICAL',
-      'WORKPRINT' => 'WORKPRINT',
+      'WORKPRINT' => [
+          'WORKPRINT',
+          'WP'
+      ],
       'FANSUB' => 'FANSUB',
       'REPACK' => 'REPACK',
-      'UNRATED' => 'UNRATED',
       'NFOFIX' => 'NFOFIX',
       'NTSC' => 'NTSC',
       'PAL' => 'PAL',
-      'INTERNAL' => 'INTERNAL',
+      'INTERNAL' => [
+          'INTERNAL',
+          'INT'
+      ],
       'FESTIVAL' => 'FESTIVAL',
       'STV' => 'STV',
-      'LIMITED' => 'LIMITED',
-      'RERIP' => 'RERIP',
       'RETAIL' => 'RETAIL',
       'REMASTERED' => 'REMASTERED',
       'UNRATED' => 'UNRATED',
@@ -251,12 +283,17 @@
       'HDLIGHT' => 'HDLIGHT',
       'UNCUT' => 'UNCUT',
       'UNCENSORED' => 'UNCENSORED',
+      'COMPLETE' => 'COMPLETE',
+      'UNTOUCHED' => 'UNTOUCHED',
+      'DC' => 'DC',
       'DUBBED' => 'DUBBED',
       'SUBBED' => 'SUBBED',
       'REMUX' => 'REMUX',
       'DUAL' => 'DUAL',
       'FINAL' => 'FINAL',
       'COLORIZED' => 'COLORIZED',
+      'WS' => 'WS',
+      'DL' => 'DL',
       'DOLBY DIGITAL' => 'DOLBY DIGITAL',
       'DTS' => 'DTS',
       'AAC' => 'AAC',
@@ -265,6 +302,7 @@
       'TRUEHD' => 'TRUEHD',
       '3D' => '3D',
       'HSBS' => 'HSBS',
+      'HOU' => 'HOU',
       'DOC' => 'DOC',
       'RERIP' => [
         'rerip',
