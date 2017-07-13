@@ -550,7 +550,7 @@
         }
 
         foreach($patterns as $pattern){
-          $title = preg_replace('#[\.|\-]'.preg_quote($pattern).'([\.|\-])?#i', '$1', $title, 1, $replacements);
+          $title = preg_replace('#[\.|\-]'.preg_quote($pattern).'([\.|\-]|$)#i', '$1', $title, 1, $replacements);
           if($replacements > 0){
             return $key;
           }
@@ -665,7 +665,7 @@
         }
 
         foreach($patterns as $pattern){
-          $title = preg_replace('#[\.|\-]'.preg_quote($pattern).'([\.|\-| ])#i', '$1', $title, 1, $replacements);
+          $title = preg_replace('#[\.|\-]'.preg_quote($pattern).'([\.|\-]|$)#i', '$1', $title, 1, $replacements);
           if($replacements > 0){
             $languages[] = $langue;
             break;
@@ -822,7 +822,7 @@
         }
 
         foreach($patterns as $pattern){
-          $title = preg_replace('#[\.|\-]'.preg_quote($pattern).'([\.|\-])?#i', '$1', $title, 1, $replacements);
+          $title = preg_replace('#[\.|\-]'.preg_quote($pattern).'([\.|\-]|$)#i', '$1', $title, 1, $replacements);
           if($replacements > 0){
             $flags[] = $key;
           }
