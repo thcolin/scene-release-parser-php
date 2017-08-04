@@ -37,11 +37,6 @@
           'resolution' => Release::RESOLUTION_720P,
           'language' => 'ENGLISH'
         ],
-        'http://s1.demo-world.eu/hd_trailers.php?file=distributor_anonymous_content-DWEU.mkv' => [
-          'encoding' => Release::ENCODING_X264,
-          'resolution' => Release::RESOLUTION_1080P,
-          'language' => 'ENGLISH'
-        ],
         'https://cinelerra-cv.org/footage/rassegna2.avi' => [
           'encoding' => Release::ENCODING_DIVX,
           'resolution' => Release::RESOLUTION_SD,
