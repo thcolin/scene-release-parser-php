@@ -25,6 +25,7 @@
     const SOURCE_BLURAY = 'BLURAY';
     const SOURCE_PDTV = 'PDTV';
     const SOURCE_SDTV = 'SDTV';
+    const SOURCE_HDTV = 'HDTV';
     const SOURCE_CAM = 'CAM';
     const SOURCE_TC = 'TC';
 
@@ -106,9 +107,6 @@
         'r5'
       ],
       self::SOURCE_HDRIP => [
-        'hdtv',
-        'hdtvrip',
-        'hdtv-rip',
         'hdrip',
         'hdlight',
         'mhd',
@@ -129,6 +127,11 @@
         'satrip',
         'dthrip',
         'dvbrip'
+      ],
+      self::SOURCE_HDTV => [
+        'hdtv',
+        'hdtvrip',
+        'hdtv-rip'
       ]
     ];
 
@@ -258,6 +261,7 @@
       'LIMITED' => 'LIMITED',
       'SUBFRENCH' => 'SUBFRENCH',
       'SUBFORCED' => 'SUBFORCED',
+      'LIMITED' => 'LIMITED',
       'EXTENDED' => 'EXTENDED',
       'THEATRICAL' => 'THEATRICAL',
       'WORKPRINT' => [
@@ -266,6 +270,7 @@
       ],
       'FANSUB' => 'FANSUB',
       'REPACK' => 'REPACK',
+      'UNRATED' => 'UNRATED',
       'NFOFIX' => 'NFOFIX',
       'NTSC' => 'NTSC',
       'PAL' => 'PAL',
@@ -275,6 +280,8 @@
       ],
       'FESTIVAL' => 'FESTIVAL',
       'STV' => 'STV',
+      'LIMITED' => 'LIMITED',
+      'RERIP' => 'RERIP',
       'RETAIL' => 'RETAIL',
       'REMASTERED' => 'REMASTERED',
       'UNRATED' => 'UNRATED',
