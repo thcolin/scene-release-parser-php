@@ -120,12 +120,7 @@ Inside `bin` folder, you got a `scene-release-renamer` executable, which require
 
 ### Usage
 ```
-php bin/scene-release-renamer <path>
-[--non-verbose]
-[--non-interactive]
-[--non-invasive]
-[--mediainfo=/usr/local/bin/mediainfo]
-[--default-(language|resolution|year)=value]
+php bin/scene-release-renamer <path> [--non-verbose] [--non-interactive] [--non-invasive] [--mediainfo=/usr/local/bin/mediainfo] [--default-(language|resolution|year)=value]
 ```
 
 ### Results :
