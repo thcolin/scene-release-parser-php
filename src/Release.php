@@ -16,8 +16,8 @@
     const SOURCE = 'source';
     const SOURCE_DVDRIP = 'DVDRip';
     const SOURCE_DVDSCR = 'DVDScr';
+    const SOURCE_BDSCR  = 'BDScr';
     const SOURCE_WEB_DL = 'WEB-DL';
-    const SOURCE_BRRIP = 'BRRip';
     const SOURCE_BDRIP = 'BDRip';
     const SOURCE_DVD_R = 'DVD-R';
     const SOURCE_R5 = 'R5';
@@ -25,6 +25,9 @@
     const SOURCE_BLURAY = 'BLURAY';
     const SOURCE_PDTV = 'PDTV';
     const SOURCE_SDTV = 'SDTV';
+    const SOURCE_HDTV = 'HDTV';
+    const SOURCE_CAM = 'CAM';
+    const SOURCE_TC = 'TC';
 
     const ENCODING = 'encoding';
     const ENCODING_XVID = 'XviD';
@@ -48,6 +51,18 @@
     const LANGUAGE_DEFAULT = 'VO';
 
     public static $sourceStatic = [
+      self::SOURCE_CAM => [
+        'cam',
+        'camrip',
+        'cam-rip',
+        'ts',
+        'telesync',
+        'pdvd'
+      ],
+      self::SOURCE_TC => [
+        'tc',
+        'telecine'
+      ],
       self::SOURCE_DVDRIP => [
         'dvdrip',
         'dvd-rip'
@@ -55,7 +70,14 @@
       self::SOURCE_DVDSCR => [
         'dvdscr',
         'dvd-scr',
-        'dvdscreener'
+        'dvdscreener',
+        'screener',
+        'scr',
+        'DDC'
+      ],
+      self::SOURCE_BDSCR => [
+        'bluray-scr',
+        'bdscr'
       ],
       self::SOURCE_WEB_DL => [
         'webtv',
@@ -63,28 +85,28 @@
         'webdl',
         'web-dl',
         'webrip',
+        'web-rip',
         'webhd',
         'web'
       ],
-      self::SOURCE_BRRIP => [
+      self::SOURCE_BDRIP => [
+        'bdrip',
+        'bd-rip',
         'brrip',
         'br-rip'
       ],
-      self::SOURCE_BDRIP => [
-        'bdrip',
-        'bd-rip'
-      ],
       self::SOURCE_DVD_R => [
         'dvd',
-        'dvd-r'
+        'dvdr',
+        'dvd-r',
+        'dvd-5',
+        'dvd-9',
+        'r6-dvd'
       ],
       self::SOURCE_R5 => [
         'r5'
       ],
       self::SOURCE_HDRIP => [
-        'hdtv',
-        'hdtvrip',
-        'hdtv-rip',
         'hdrip',
         'hdlight',
         'mhd',
@@ -92,13 +114,24 @@
       ],
       self::SOURCE_BLURAY => [
         'bluray',
-        'blu-ray'
+        'blu-ray',
+        'bdr'
       ],
       self::SOURCE_PDTV => [
         'pdtv'
       ],
       self::SOURCE_SDTV => [
-        'sdtv'
+        'sdtv',
+        'dsr',
+        'dsrip',
+        'satrip',
+        'dthrip',
+        'dvbrip'
+      ],
+      self::SOURCE_HDTV => [
+        'hdtv',
+        'hdtvrip',
+        'hdtv-rip'
       ]
     ];
 
@@ -231,14 +264,20 @@
       'LIMITED' => 'LIMITED',
       'EXTENDED' => 'EXTENDED',
       'THEATRICAL' => 'THEATRICAL',
-      'WORKPRINT' => 'WORKPRINT',
+      'WORKPRINT' => [
+          'WORKPRINT',
+          'WP'
+      ],
       'FANSUB' => 'FANSUB',
       'REPACK' => 'REPACK',
       'UNRATED' => 'UNRATED',
       'NFOFIX' => 'NFOFIX',
       'NTSC' => 'NTSC',
       'PAL' => 'PAL',
-      'INTERNAL' => 'INTERNAL',
+      'INTERNAL' => [
+          'INTERNAL',
+          'INT'
+      ],
       'FESTIVAL' => 'FESTIVAL',
       'STV' => 'STV',
       'LIMITED' => 'LIMITED',
@@ -251,12 +290,17 @@
       'HDLIGHT' => 'HDLIGHT',
       'UNCUT' => 'UNCUT',
       'UNCENSORED' => 'UNCENSORED',
+      'COMPLETE' => 'COMPLETE',
+      'UNTOUCHED' => 'UNTOUCHED',
+      'DC' => 'DC',
       'DUBBED' => 'DUBBED',
       'SUBBED' => 'SUBBED',
       'REMUX' => 'REMUX',
       'DUAL' => 'DUAL',
       'FINAL' => 'FINAL',
       'COLORIZED' => 'COLORIZED',
+      'WS' => 'WS',
+      'DL' => 'DL',
       'DOLBY DIGITAL' => 'DOLBY DIGITAL',
       'DTS' => 'DTS',
       'AAC' => 'AAC',
@@ -265,6 +309,7 @@
       'TRUEHD' => 'TRUEHD',
       '3D' => '3D',
       'HSBS' => 'HSBS',
+      'HOU' => 'HOU',
       'DOC' => 'DOC',
       'RERIP' => [
         'rerip',
@@ -521,7 +566,7 @@
 
     public function guess(){
       $release = $this;
-      
+
       if(!isset($release -> year)){
         $release -> setYear($release -> guessYear());
       }
@@ -550,7 +595,7 @@
         }
 
         foreach($patterns as $pattern){
-          $title = preg_replace('#[\.|\-]'.preg_quote($pattern).'([\.|\-])?#i', '$1', $title, 1, $replacements);
+          $title = preg_replace('#[\.|\-]'.preg_quote($pattern).'([\.|\-| ]|$)#i', '$1', $title, 1, $replacements);
           if($replacements > 0){
             return $key;
           }
@@ -665,7 +710,7 @@
         }
 
         foreach($patterns as $pattern){
-          $title = preg_replace('#[\.|\-]'.preg_quote($pattern).'([\.|\-| ])#i', '$1', $title, 1, $replacements);
+          $title = preg_replace('#[\.|\-]'.preg_quote($pattern).'([\.|\-]|$)#i', '$1', $title, 1, $replacements);
           if($replacements > 0){
             $languages[] = $langue;
             break;
@@ -707,6 +752,8 @@
     public function guessResolution(){
       if($this -> resolution){
         return $this -> resolution;
+      } else if($this->getSource() == self::SOURCE_BLURAY || $this->getSource() == self::SOURCE_BDSCR){
+        return self::RESOLUTION_1080P;
       } else if(isset($this -> defaults['resolution'])){
         return $this -> defaults['resolution'];
       } else {
@@ -822,7 +869,7 @@
         }
 
         foreach($patterns as $pattern){
-          $title = preg_replace('#[\.|\-]'.preg_quote($pattern).'([\.|\-])?#i', '$1', $title, 1, $replacements);
+          $title = preg_replace('#[\.|\-]'.preg_quote($pattern).'([\.|\-]|$)#i', '$1', $title, 1, $replacements);
           if($replacements > 0){
             $flags[] = $key;
           }
