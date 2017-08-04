@@ -76,16 +76,29 @@ $Release = new Release("Bataille a Seattle BDRip", false, [
   'language' => 'FRENCH' // default to Release::LANGUAGE_DEFAULT (VO)
 ]);
 
-$Release -> guess();
-
 // LANGUAGE
+echo($Release -> getLanguage()); // null
 echo($Release -> guessLanguage()); // FRENCH
 
 // RESOLUTION
+echo($Release -> getResolution()); // null
 echo($Release -> guessResolution()); // SD
 
 // YEAR
+echo($Release -> getYear()); // null
 echo($Release -> guessYear()); // 2017 (current year)
+
+// Will set guessed values to the Release
+$Release -> guess();
+
+// LANGUAGE
+echo($Release -> getLanguage()); // FRENCH
+
+// RESOLUTION
+echo($Release -> getResolution()); // SD
+
+// YEAR
+echo($Release -> getYear()); // 2017 (current year)
 ```
 
 ## Analyze
@@ -123,7 +136,7 @@ Inside `bin` folder, you got a `scene-release-renamer` executable, which require
 php bin/scene-release-renamer <path> [--non-verbose] [--non-interactive] [--non-invasive] [--mediainfo=/usr/local/bin/mediainfo] [--default-(language|resolution|year)=value]
 ```
 
-### Results :
+## Results :
 | Original | Generated |
 | -------- | --------- |
 | Benjamin Button [x264] [HD 720p] [LUCN] [FR].mp4 | Benjamin.Button.FRENCH.720p.HDRip.x264-NOTEAM.mp4 |
