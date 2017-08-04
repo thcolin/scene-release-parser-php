@@ -139,8 +139,10 @@ php bin/scene-release-renamer <path> [--non-verbose] [--non-interactive] [--non-
 Use PHPUnit, there is a script to generate the json data for the tests in the folder `/utils`, it will take the release names from the `releases.txt` file in the same folder. Use it to generate the data needed for the tests, but before testing, make sure all the datas generated are valid, if not this would be useless.
 
 ## Bugs
-* The Shawshank Redemption (1994) MULTi (VFQ-VO-VFF) 1080p BluRay x264-PopHD  (Les Évadés) - The.Shawshank.1994.MULTI.1080p.BLURAY.x264-NOTEAM
-* La ligne Verte (1999) MULTi-VF2 [1080p] BluRay x264-PopHD (The Green Mile) - La.Ligne.1999.MULTI.1080p.BLURAY.x264-PopHD
+| Original | Generated |
+| -------- | --------- |
+| The Shawshank Redemption (1994) MULTi (VFQ-VO-VFF) 1080p BluRay x264-PopHD  (Les Évadés) | The.Shawshank.1994.MULTI.1080p.BLURAY.x264-NOTEAM |
+| La ligne Verte (1999) MULTi-VF2 [1080p] BluRay x264-PopHD (The Green Mile) | La.Ligne.1999.MULTI.1080p.BLURAY.x264-PopHD |
 
 ## TODO
 * `Release->guessResolution()` should consider `$Release->source`
