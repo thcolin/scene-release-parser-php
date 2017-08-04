@@ -2,8 +2,18 @@
 
   use thcolin\SceneReleaseParser\Release;
   use PHPUnit\Framework\TestCase;
+  use PHPUnit\Framework\Error\Notice;
+  use PHPUnit\Framework\Error\Error;
 
   class ReleaseTest extends TestCase{
+
+    public static function setUpBeforeClass(){
+      if(PHP_OS === 'Darwin'){
+        define('__MEDIAINFO_BIN__', '/usr/local/bin/mediainfo');
+      } else{
+        define('__MEDIAINFO_BIN__', '/usr/bin/mediainfo');
+      }
+    }
 
     public function setUp(){
       $json = file_get_contents(__DIR__.'/../utils/releases.json');
@@ -12,6 +22,65 @@
       foreach($array as $key => $element){
         $element['object'] = new Release($key);
         $this -> elements[] = $element;
+      }
+    }
+
+    public function testAnalyseSuccess(){
+      $elements = [
+        'https://www.quirksmode.org/html5/videos/big_buck_bunny.mp4' => [
+          'encoding' => Release::ENCODING_H264,
+          'resolution' => Release::RESOLUTION_SD,
+          'language' => 'ENGLISH'
+        ],
+        'https://samples.mplayerhq.hu/V-codecs/h264/bbc-africa_m720p.mov' => [
+          'encoding' => Release::ENCODING_H264,
+          'resolution' => Release::RESOLUTION_720P,
+          'language' => 'ENGLISH'
+        ],
+        'https://cinelerra-cv.org/footage/rassegna2.avi' => [
+          'encoding' => Release::ENCODING_DIVX,
+          'resolution' => Release::RESOLUTION_SD,
+          'language' => 'VO'
+        ],
+        'https://samples.mplayerhq.hu/V-codecs/XVID/old/green.avi' => [
+          'encoding' => Release::ENCODING_XVID,
+          'resolution' => Release::RESOLUTION_SD,
+          'language' => 'VO'
+        ],
+        'http://samples.mplayerhq.hu/Matroska/x264_no-b-frames.mkv' => [
+          'encoding' => Release::ENCODING_X264,
+          'resolution' => Release::RESOLUTION_720P,
+          'language' => 'VO'
+        ],
+        'https://s3.amazonaws.com/x265.org/video/Tears_400_x265.mp4' => [
+          'encoding' => Release::ENCODING_X265,
+          'resolution' => Release::RESOLUTION_1080P,
+          'language' => 'VO'
+        ],
+      ];
+
+      foreach($elements as $url => $element){
+        $basename = basename($url);
+
+        if(!is_dir(__DIR__.'/tmp/')){
+          mkdir(__DIR__.'/tmp/');
+        }
+
+        if(!is_file(__DIR__.'/tmp/'.$basename)){
+          file_put_contents(__DIR__.'/tmp/'.$basename, fopen($url, 'r'));
+        }
+
+        $config = [];
+
+        if(defined('__MEDIAINFO_BIN__')){
+          $config['command'] = __MEDIAINFO_BIN__;
+        }
+
+        $release = Release::analyse(__DIR__.'/tmp/'.$basename, $config);
+
+        $this -> assertEquals($element['encoding'], $release -> getEncoding(), $url);
+        $this -> assertEquals($element['resolution'], $release -> getResolution(), $url);
+        $this -> assertEquals($element['language'], $release -> getLanguage(), $url);
       }
     }
 
@@ -189,11 +258,24 @@
       }
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     */
-    public function testConstructFail(){
+    public function testConstructStrictFail(){
+      $this -> expectException(InvalidArgumentException::class);
       $release = new Release('This is not a good scene release name');
+    }
+
+    public function testConstructStrictSuccess(){
+      $release = new Release('This is not a good scene release name', false);
+      $this->assertInstanceOf('thcolin\SceneReleaseParser\Release', $release);
+    }
+
+    public function testConstructDefaultsSuccess(){
+      $release = new Release('This is not a good scene release name', false, ['language' => 'FRENCH']);
+      $this -> assertEquals($release -> guessLanguage(), 'FRENCH');
+    }
+
+    public function testConstructDefaultsNotice(){
+      $this -> expectException(Notice::class);
+      $release = new Release('This is not a good scene release name', false, ['language' => 'UNKNOWN']);
     }
 
   }

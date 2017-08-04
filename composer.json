@@ -14,7 +14,9 @@
 	    }
     },
     "require": {
-        "mhor/php-mediainfo": "~2.1"
+        "mhor/php-mediainfo": "~2.1",
+        "symfony/console": "^3.2",
+        "symfony/framework-bundle": "^3.2"
     },
     "require-dev": {
         "codeclimate/php-test-reporter": "dev-master",

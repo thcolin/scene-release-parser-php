@@ -9,3 +9,8 @@ ehthumbs.db
 Thumbs.db
 
 /vendor/
+
+*.mov
+*.avi
+*.mkv
+*.mp4
