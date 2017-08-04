@@ -286,6 +286,7 @@
 
     protected $release = null;
     protected $strict = true;
+    protected $defaults = [];
     protected $type = null;
     protected $title = null;
     protected $year = 0;
@@ -300,8 +301,17 @@
     protected $season = 0;
     protected $episode = 0;
 
-    public function __construct($name, $strict = true){
+    public function __construct($name, $strict = true, $defaults = []){
+      foreach($defaults as $key => $default){
+        $const = $key.'Static';
+
+        if(property_exists(get_class(), $const) && !in_array($default, array_keys(self::$$const))){
+          trigger_error('Default "'.$key.'" should be a value from Release::$'.$const);
+        }
+      }
+
       $this -> strict = $strict;
+      $this -> defaults = $defaults;
 
       // CLEAN
       $cleaned = $this -> clean($name);
@@ -358,8 +368,8 @@
         $this -> getYear(),
         ($this -> getSeason() ? 'S'.sprintf('%02d', $this -> getSeason()):'').
         ($this -> getEpisode() ? 'E'.sprintf('%02d', $this -> getEpisode()):''),
-        ($this -> getLanguage() !== Release::LANGUAGE_DEFAULT ? $this -> getLanguage():''),
-        ($this -> getResolution() !== Release::RESOLUTION_SD ? $this -> getResolution():''),
+        ($this -> getLanguage() !== self::LANGUAGE_DEFAULT ? $this -> getLanguage():''),
+        ($this -> getResolution() !== self::RESOLUTION_SD ? $this -> getResolution():''),
         $this -> getSource(),
         $this -> getEncoding(),
         $this -> getDub()
@@ -396,15 +406,15 @@
         if($codec = $video -> get('encoded_library_name')){
           switch($codec){
             case 'DivX':
-              $release -> setEncoding(Release::ENCODING_DIVX);
+              $release -> setEncoding(self::ENCODING_DIVX);
               continue;
             break;
             case 'x264':
-              $release -> setEncoding(Release::ENCODING_X264);
+              $release -> setEncoding(self::ENCODING_X264);
               continue;
             break;
             case 'x265':
-              $release -> setEncoding(Release::ENCODING_X265);
+              $release -> setEncoding(self::ENCODING_X265);
               continue;
             break;
           }
@@ -413,15 +423,15 @@
         if($codec = $video -> get('writing_library_name')){
           switch($codec){
             case 'DivX':
-              $release -> setEncoding(Release::ENCODING_DIVX);
+              $release -> setEncoding(self::ENCODING_DIVX);
               continue;
             break;
             case 'x264':
-              $release -> setEncoding(Release::ENCODING_X264);
+              $release -> setEncoding(self::ENCODING_X264);
               continue;
             break;
             case 'x265':
-              $release -> setEncoding(Release::ENCODING_X265);
+              $release -> setEncoding(self::ENCODING_X265);
               continue;
             break;
           }
@@ -430,15 +440,15 @@
         if($codec = $video -> get('codec_cc')){
           switch($codec){
             case 'DIVX':
-              $release -> setEncoding(Release::ENCODING_DIVX);
+              $release -> setEncoding(self::ENCODING_DIVX);
               continue;
             break;
             case 'XVID':
-              $release -> setEncoding(Release::ENCODING_XVID);
+              $release -> setEncoding(self::ENCODING_XVID);
               continue;
             break;
             case 'hvc1':
-              $release -> setEncoding(Release::ENCODING_X265);
+              $release -> setEncoding(self::ENCODING_X265);
               continue;
             break;
           }
@@ -448,7 +458,7 @@
           if($codec = $video -> get('internet_media_type')){
             switch($codec){
               case 'video/H264':
-                $release -> setEncoding(Release::ENCODING_H264);
+                $release -> setEncoding(self::ENCODING_H264);
                 continue;
               break;
             }
@@ -461,11 +471,11 @@
           $width = $video -> get('width') -> getAbsoluteValue();
 
           if($height >= 1000 || $width >= 1900){
-            $release -> setResolution(Release::RESOLUTION_1080P);
+            $release -> setResolution(self::RESOLUTION_1080P);
           } else if($height >= 700 || $width >= 1200){
-            $release -> setResolution(Release::RESOLUTION_720P);
+            $release -> setResolution(self::RESOLUTION_720P);
           } else{
-            $release -> setResolution(Release::RESOLUTION_SD);
+            $release -> setResolution(self::RESOLUTION_SD);
           }
         }
       }
@@ -474,7 +484,7 @@
       $audios = $container -> getAudios();
 
       if(count($audios) > 1){
-        $release -> setLanguage(Release::LANGUAGE_MULTI);
+        $release -> setLanguage(self::LANGUAGE_MULTI);
       } else if(count($audios) > 0){
         $languages = $audios[0] -> get('language');
         if($languages){
@@ -483,8 +493,8 @@
       }
 
       if(!$release -> getLanguage()){
-        // default : ENGLISH
-        $release -> setLanguage(Release::LANGUAGE_DEFAULT);
+        // default : VO
+        $release -> setLanguage(self::LANGUAGE_DEFAULT);
       }
 
       return $release;
@@ -534,7 +544,7 @@
 
       $attributes = $attribute.'Static';
 
-      foreach(Release::$$attributes as $key => $patterns){
+      foreach(self::$$attributes as $key => $patterns){
         if(!is_array($patterns)){
           $patterns = [$patterns];
         }
@@ -649,7 +659,7 @@
     private function parseLanguage(&$title){
       $languages = [];
 
-      foreach(Release::$languageStatic as $langue => $patterns){
+      foreach(self::$languageStatic as $langue => $patterns){
         if(!is_array($patterns)){
           $patterns = [$patterns];
         }
@@ -673,7 +683,13 @@
     }
 
     public function guessLanguage(){
-      return self::LANGUAGE_DEFAULT;
+      if($this -> language){
+        return $this -> language;
+      } else if(isset($this -> defaults['language'])){
+        return $this -> defaults['language'];
+      } else {
+        return self::LANGUAGE_DEFAULT;
+      }
     }
 
     public function setLanguage($language){
@@ -689,7 +705,13 @@
     }
 
     public function guessResolution(){
-      return 'SD';
+      if($this -> resolution){
+        return $this -> resolution;
+      } else if(isset($this -> defaults['resolution'])){
+        return $this -> defaults['resolution'];
+      } else {
+        return self::RESOLUTION_SD;
+      }
     }
 
     public function setResolution($resolution){
@@ -751,7 +773,13 @@
     }
 
     public function guessYear(){
-      return date('Y');
+      if($this -> year){
+        return $this -> year;
+      } else if(isset($this -> defaults['year'])){
+        return $this -> defaults['year'];
+      } else {
+        return date('Y');
+      }
     }
 
     public function setYear($year){
@@ -788,7 +816,7 @@
     private function parseFlags(&$title){
       $flags = [];
 
-      foreach(Release::$flagsStatic as $key => $patterns){
+      foreach(self::$flagsStatic as $key => $patterns){
         if(!is_array($patterns)){
           $patterns = [$patterns];
         }

@@ -4,11 +4,9 @@
 [![Code Climate](https://codeclimate.com/github/thcolin/scene-release-parser/badges/gpa.svg)](https://codeclimate.com/github/thcolin/scene-release-parser)
 [![Test Coverage](https://codeclimate.com/github/thcolin/scene-release-parser/badges/coverage.svg)](https://codeclimate.com/github/thcolin/scene-release-parser/coverage)
 
-PHP Library to parse scene release names to get their tags and title (original from [majestixx/scene-release-parser-php-lib](https://github.com/majestixx/scene-release-parser-php-lib)).
+PHP Library parsing a scene release name to retrieve title and tags (original from [majestixx/scene-release-parser-php-lib](https://github.com/majestixx/scene-release-parser-php-lib)).
 
-The library contains one classe, **thcolin\SceneReleaseParser\Release**, the constructor will try to extract all the tags from the Release name and creates an object with easy access to all information, remaining parts will construct the title of the media (movie or tv show).
-
-I added another class : **thcolin\SceneReleaseParser\Parser**, constructed with a **Mhor\MediaInfo\MediaInfo** object. It can ```parse``` a file to a ```Release``` by his path. It add unavailable informations with **MediaInfo** about the file.
+The library is made of one class : `thcolin\SceneReleaseParser\Release`, the constructor will try to extract all the tags from the release name and creates `getters` for each one, remaining parts will construct the title of the media (movie or tv show).
 
 ## Installation
 Install with composer :
@@ -17,11 +15,16 @@ composer require thcolin/scene-release-parser dev-master
 ```
 
 ## Release Example :
-Create a new object with the release name and retrieve all the tags and the name :
+Easiest way to start using the lib is to instantiating a new `Release` object with a scene release name as first argument, it will retrieve all the tags and the name :
+
 ```php
 use thcolin\SceneReleaseParser\Release;
 
-$Release = new Release("Mr.Robot.S01E05.PROPER.VOSTFR.720p.WEB-DL.DD5.1.H264-ARK01");
+// Optionals arguments
+$strict = true; // if no tags found, it will throw an exception
+$defaults = []; // defaults values for : language, resolution and year
+
+$Release = new Release("Mr.Robot.S01E05.PROPER.VOSTFR.720p.WEB-DL.DD5.1.H264-ARK01", $strict, $defaults);
 
 // TYPE
 echo($Release -> getType()); // tvshow (::TVSHOW)
@@ -64,23 +67,40 @@ echo($Release -> getEpisode()); // 5
 ```
 
 ## Guess
-Unknown informations can be guessed :
-* Year is guessed with the year of the system
-* Resolution can be guessed with the source of the Release
-* Language return 'VO' if there is no tag
+Unknown informations of a current `Release` can be guessed :
 
-## Parser Example :
-Parse a file to a Release and correct resolution, encoding and language with mediainfo informations :
 ```php
-use thcolin\SceneReleaseParser\Parser;
 use thcolin\SceneReleaseParser\Release;
-use Mhor\MediaInfo\MediaInfo;
 
-$MediaInfo = new MediaInfo();
-$Parser = new Parser($MediaInfo);
+$Release = new Release("Bataille a Seattle BDRip", false, [
+  'language' => 'FRENCH' // default to Release::LANGUAGE_DEFAULT (VO)
+]);
 
-$Parser -> setDefaultLanguage('FRENCH');
-$Release = $Parser -> parse('/home/downloads/Bataille a Seattle BDRip FR.avi');
+$Release -> guess();
+
+// LANGUAGE
+echo($Release -> guessLanguage()); // FRENCH
+
+// RESOLUTION
+echo($Release -> guessResolution()); // SD
+
+// YEAR
+echo($Release -> guessYear()); // 2017 (current year)
+```
+
+## Analyze
+For best results, you can directly analyze a `file`, the method will use `mediainfo` :
+
+```php
+use thcolin\SceneReleaseParser\Release;
+
+// Mhor\MediaInfo::setConfig arguments (default to empty)
+$mediainfo = [
+  // Optional, just for example
+  'command' => '/usr/local/bin/mediainfo'
+];
+
+$Release = Release::analyze('/home/downloads/Bataille a Seattle BDRip.avi', $mediainfo);
 
 // RELEASE
 echo($Release -> getRelease(Release::GENERATED_RELEASE)): // Bataille.A.Seattle.FRENCH.720p.BDRip.x264-NOTEAM
@@ -92,24 +112,28 @@ echo($Release -> getResolution()); // 720p
 echo($Release -> getEncoding()); // x264
 
 // LANGUAGE
-echo($Release -> getLanguage()); // FRENCH (default)
+echo($Release -> getLanguage()); // FRENCH
 ```
 
 ## Bin
-Inside of `bin` folder, you got a `scene-release-renamer` executable to rename video file with approximately good scene release name.
+Inside `bin` folder, you got a `scene-release-renamer` executable, which require a `<path>` argument (default to current working directory). It will scan `<path>`, searching for video files (avi, mp4, mkv, mov) and folders to rename (if dirty) with valid generated scene release name. Scene release name will be constructed with current file name and `mediainfo` parsed informations (if available). If errors comes up, you'll be able to fix them manually.
 
-### How to use
-Rename all the video files (avi, mp4, mkv) of the path :
+### Usage
 ```
 php bin/scene-release-renamer <path>
+[--non-verbose]
+[--non-interactive]
+[--non-invasive]
+[--mediainfo=/usr/local/bin/mediainfo]
+[--default-(language|resolution|year)=value]
 ```
 
-### Exemple :
+### Results :
 | Original | Generated |
 | -------- | --------- |
 | Benjamin Button [x264] [HD 720p] [LUCN] [FR].mp4 | Benjamin.Button.FRENCH.720p.HDRip.x264-NOTEAM.mp4 |
 | Jamais entre amis (2015) [1080p] MULTI (VFQ-VOA) Bluray x264 AC3-PopHD (Sleeping with Other People).mkv | Jamais.Entre.Amis.2015.MULTI.1080p.BLURAY.x264.AC3-PopHD.mkv |
-| La Vie rêvée de Walter Mitty [1080p] MULTi 2013 BluRay x264-Pop (The Secret Life Of Walter Mitty) .mkv | La.Vie.Re?ve?e.De.Walter.Mitty.2013.MULTI.1080p.BLURAY.x264-Pop.mkv |
+| La Vie rêvée de Walter Mitty [1080p] MULTi 2013 BluRay x264-Pop (The Secret Life Of Walter Mitty) .mkv | La.Vie.Rêvée.De.Walter.Mitty.2013.MULTI.1080p.BLURAY.x264-Pop.mkv |
 | Le Nouveau Stagiaire (2015) The Intern - Multi 1080p - x264 AAC 5.1 - CCATS.mkv | Le.Nouveau.Stagiaire.2015.MULTI.1080p.x264-CCATS.mkv |
 | Le prestige (2006) (The Prestige) 720p x264 AAC 5.1 MULTI [NOEX].mkv | Le.Prestige.2006.MULTI.720p.x264-NOTEAM.mkv |
 | Les 4 Fantastiques 2015 Truefrench 720p x264 AAC PIXEL.mp4 | Les.4.Fantastiques.2015.TRUEFRENCH.720p.x264-NOTEAM.mp4 |
@@ -117,22 +141,19 @@ php bin/scene-release-renamer <path>
 | Tower Heist [1080p] MULTI 2011 BluRay x264-Pop  .Le casse De Central Park. .mkv | Tower.Heist.2011.MULTI.1080p.BLURAY.x264-Pop.mkv |
 
 ## Tests
-Use PHPUnit, there is a script to generate the json data for the tests in the folder ```/utils```, it will take the release names from the ```releases.txt``` file in the same folder. Use it to generate the data needed for the tests, but before testing, make sure all the datas generated are valid, if not this would be useless.
+Use PHPUnit, there is a script to generate the json data for the tests in the folder `/utils`, it will take the release names from the `releases.txt` file in the same folder. Use it to generate the data needed for the tests, but before testing, make sure all the datas generated are valid, if not this would be useless.
 
 ## Bugs
 * The Shawshank Redemption (1994) MULTi (VFQ-VO-VFF) 1080p BluRay x264-PopHD  (Les Évadés) - The.Shawshank.1994.MULTI.1080p.BLURAY.x264-NOTEAM
 * La ligne Verte (1999) MULTi-VF2 [1080p] BluRay x264-PopHD (The Green Mile) - La.Ligne.1999.MULTI.1080p.BLURAY.x264-PopHD
 
 ## TODO
-* Refacto `README`
-* Add tests on `Renamer`, `Command/RenamerCommand` and `bin/scene-release-renamer`
-* Check if by default the `Release` class use `guess()` when `__toString` is called if some informations are missing
-  * And use `mediainfo` to get unknowns informations
-* Refacto `Command/RenamerCommand` :
-  * Use current path by default
-  * By default, ask the user if he want rename each file
-    * Enable/Disable with an option (like `--skip-X`)
-    * Allow the user to change `Release` informations
-  * Display a message and don't throw an exception at the end
+* `Release->guessResolution()` should consider `$Release->source`
+* Add `Release::LANGUAGE_*` constants
+  * Use them in `ReleaseTest`
+  * And `README ## Guess`
+* Add `boolean $flags` for `Release::__toString`
+  * implement option in `Release::getRelease` too
+  * if `true` will add `Release->flags` to generated release name
 * Resolve CodeCoverage issues
 <!-- * Up to date ! -->

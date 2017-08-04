@@ -2,6 +2,8 @@
 
   use thcolin\SceneReleaseParser\Release;
   use PHPUnit\Framework\TestCase;
+  use PHPUnit\Framework\Error\Notice;
+  use PHPUnit\Framework\Error\Error;
 
   class ReleaseTest extends TestCase{
 
@@ -23,20 +25,20 @@
 
     public function testAnalyseSuccess(){
       $elements = [
-        'http://download.geexbox.org/sample/H264/h264_Linkin_Park-Leave_Out_All_The_Rest.mp4' => [
+        'https://www.quirksmode.org/html5/videos/big_buck_bunny.mp4' => [
           'encoding' => Release::ENCODING_H264,
           'resolution' => Release::RESOLUTION_SD,
-          'language' => 'VO'
+          'language' => 'ENGLISH'
         ],
         'https://samples.mplayerhq.hu/V-codecs/h264/bbc-africa_m720p.mov' => [
           'encoding' => Release::ENCODING_H264,
           'resolution' => Release::RESOLUTION_720P,
           'language' => 'ENGLISH'
         ],
-        'http://download.geexbox.org/sample/H264/h264_dts_avatar.1080p-sample.mkv' => [
-          'encoding' => Release::ENCODING_H264,
+        'http://s1.demo-world.eu/hd_trailers.php?file=distributor_anonymous_content-DWEU.mkv' => [
+          'encoding' => Release::ENCODING_X264,
           'resolution' => Release::RESOLUTION_1080P,
-          'language' => 'GERMAN'
+          'language' => 'ENGLISH'
         ],
         'https://cinelerra-cv.org/footage/rassegna2.avi' => [
           'encoding' => Release::ENCODING_DIVX,
@@ -63,8 +65,12 @@
       foreach($elements as $url => $element){
         $basename = basename($url);
 
-        if(!is_file(__DIR__.'/../utils/'.$basename)){
-          file_put_contents(__DIR__.'/../utils/'.$basename, fopen($url, 'r'));
+        if(!is_dir(__DIR__.'/tmp/')){
+          mkdir(__DIR__.'/tmp/');
+        }
+
+        if(!is_file(__DIR__.'/tmp/'.$basename)){
+          file_put_contents(__DIR__.'/tmp/'.$basename, fopen($url, 'r'));
         }
 
         $config = [];
@@ -73,7 +79,7 @@
           $config['command'] = __MEDIAINFO_BIN__;
         }
 
-        $release = Release::analyse(__DIR__.'/../utils/'.$basename, $config);
+        $release = Release::analyse(__DIR__.'/tmp/'.$basename, $config);
 
         $this -> assertEquals($element['encoding'], $release -> getEncoding(), $url);
         $this -> assertEquals($element['resolution'], $release -> getResolution(), $url);
@@ -255,16 +261,24 @@
       }
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     */
-    public function testConstructFail(){
+    public function testConstructStrictFail(){
+      $this -> expectException(InvalidArgumentException::class);
       $release = new Release('This is not a good scene release name');
     }
 
-    public function testConstructSuccess(){
+    public function testConstructStrictSuccess(){
       $release = new Release('This is not a good scene release name', false);
       $this->assertInstanceOf('thcolin\SceneReleaseParser\Release', $release);
+    }
+
+    public function testConstructDefaultsSuccess(){
+      $release = new Release('This is not a good scene release name', false, ['language' => 'FRENCH']);
+      $this -> assertEquals($release -> guessLanguage(), 'FRENCH');
+    }
+
+    public function testConstructDefaultsNotice(){
+      $this -> expectException(Notice::class);
+      $release = new Release('This is not a good scene release name', false, ['language' => 'UNKNOWN']);
     }
 
   }
