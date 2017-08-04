@@ -10,6 +10,8 @@
     public static function setUpBeforeClass(){
       if(PHP_OS === 'Darwin'){
         define('__MEDIAINFO_BIN__', '/usr/local/bin/mediainfo');
+      } else{
+        define('__MEDIAINFO_BIN__', '/usr/bin/mediainfo');
       }
     }
 
