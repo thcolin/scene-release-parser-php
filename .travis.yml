@@ -15,5 +15,9 @@ addons:
     packages:
       - mediainfo
 
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y mediainfo
+
 after_success:
   - vendor/bin/test-reporter
