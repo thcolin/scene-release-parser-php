@@ -113,7 +113,12 @@
             $release = new Release($target, true, $defaults);
           }
 
-          $release -> guess() -> setYear(null);
+          $reset = !$release -> getYear();
+          $release -> guess();
+
+          if($reset){
+            $release -> setYear(null);
+          }
 
           if($target === $release -> __toString()){
             if($verbose){
@@ -139,7 +144,13 @@
           if($interactive){
             $output -> writeln('<comment>Unhandleable</comment> target which need manual corrections : <options=underscore>'.$target.'</>');
             $release = new Release($target, false, $defaults);
-            $release -> guess() -> setYear(null);
+            $reset = !$release -> getYear();
+            $release -> guess();
+
+            if($reset){
+              $release -> setYear(null);
+            }
+
             $release = $this -> correct($input, $output, $release);
           } else{
             $results['untouched']++;
