@@ -521,7 +521,7 @@
 
     public function guess(){
       $release = $this;
-      
+
       if(!isset($release -> year)){
         $release -> setYear($release -> guessYear());
       }
@@ -550,7 +550,7 @@
         }
 
         foreach($patterns as $pattern){
-          $title = preg_replace('#[\.|\-]'.preg_quote($pattern).'([\.|\-]|$)#i', '$1', $title, 1, $replacements);
+          $title = preg_replace('#[\.|\-]'.preg_quote($pattern).'([\.|\-| ]|$)#i', '$1', $title, 1, $replacements);
           if($replacements > 0){
             return $key;
           }
