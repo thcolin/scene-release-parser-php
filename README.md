@@ -35,6 +35,7 @@ echo($Release -> getLanguage()); // VOSTFR
 // YEAR
 echo($Release -> getYear()); // null (no tag in the release name)
 echo($Release -> guessYear()); // 2015 (year of the system)
+echo($Release -> guess() -> getYear()); // 2015 (year of the system)
 
 // RESOLUTION
 echo($Release -> getResolution()); // 720p

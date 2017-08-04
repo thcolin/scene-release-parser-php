@@ -19,6 +19,7 @@
         "symfony/framework-bundle": "^3.2"
     },
     "require-dev": {
-        "codeclimate/php-test-reporter": "dev-master"
+        "codeclimate/php-test-reporter": "dev-master",
+        "phpunit/phpunit": "^6.2"
     }
 }

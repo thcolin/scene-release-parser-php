@@ -510,19 +510,21 @@
     }
 
     public function guess(){
-      if(!isset($this -> year)){
-        $this -> setYear($this -> guessYear());
+      $release = $this;
+      
+      if(!isset($release -> year)){
+        $release -> setYear($release -> guessYear());
       }
 
-      if(!isset($this -> resolution)){
-        $this -> setResolution($this -> guessResolution());
+      if(!isset($release -> resolution)){
+        $release -> setResolution($release -> guessResolution());
       }
 
-      if(!isset($this -> language)){
-        $this -> setLanguage($this -> guessLanguage());
+      if(!isset($release -> language)){
+        $release -> setLanguage($release -> guessLanguage());
       }
 
-      return $this;
+      return $release;
     }
 
     private function parseAttribute(&$title, $attribute){
